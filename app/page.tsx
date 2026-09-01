@@ -1,7 +1,7 @@
 import { Hero } from "@/components/hero";
 import { Sectors } from "@/components/sectors";
 import { About } from "@/components/about";
-import { CTA } from "@/components/cta";
+import { ContactSection } from "@/components/contact-section";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <Sectors />
       <About />
-      <CTA />
+      <ContactSection />
     </main>
   );
 }
