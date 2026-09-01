@@ -21,8 +21,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: EASE }}
             className="text-4xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl"
           >
-            Infraestructura digital y sistemas de captación autónoma para los
-            referentes del mercado en Punta del Este.
+            Infraestructura digital y sistemas de captación autónoma
           </motion.h1>
         </div>
 
