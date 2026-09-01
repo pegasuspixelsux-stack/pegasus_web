@@ -14,20 +14,22 @@ export function Sectors() {
 
   return (
     <section id="sectores" className="border-b border-white/10">
-      <motion.div
-        initial={reduce ? false : { opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.6, ease: EASE }}
-        className="mx-auto max-w-[1440px] px-6 pb-16 pt-24 lg:px-24"
-      >
-        <h2 className="mb-3 text-xs uppercase tracking-[0.2em] text-white/40">
-          Verticales Principales
-        </h2>
-        <p className="text-4xl font-light leading-[1.1] tracking-tight text-white/90 md:text-5xl lg:text-6xl">
-          Soluciones específicas diseñadas para el estándar local.
-        </p>
-      </motion.div>
+      <div className="bg-white text-black">
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: EASE }}
+          className="mx-auto max-w-[1440px] px-6 pb-16 pt-24 lg:px-24"
+        >
+          <h2 className="mb-3 text-xs uppercase tracking-[0.2em] text-black/50">
+            Verticales Principales
+          </h2>
+          <p className="text-4xl font-light leading-[1.1] tracking-tight text-black md:text-5xl lg:text-6xl">
+            Soluciones específicas diseñadas para el estándar local.
+          </p>
+        </motion.div>
+      </div>
 
       <div>
         {SECTORS.map((sector) => {
