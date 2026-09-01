@@ -16,6 +16,12 @@ const TECH_ITEMS = [
   "Optimización móvil integral",
 ];
 
+const LEGAL_LINKS = [
+  { href: "/legal/privacidad", label: "Privacidad" },
+  { href: "/legal/terminos", label: "Términos" },
+  { href: "/legal/cookies", label: "Cookies" },
+];
+
 export function SiteFooter() {
   const year = new Date().getFullYear();
 
@@ -24,11 +30,10 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-            Pegasus Pixels
+            Pegasus <span className="text-sky-400">Pixels</span>
           </p>
           <p>Infraestructura digital para Punta del Este.</p>
           <p className="text-white/40">Base en Punta del Este, Uruguay.</p>
-          <p className="text-white/40">&copy; {year} Pegasus Pixels.</p>
         </div>
 
         <nav className="space-y-3" aria-label="Sectores">
@@ -72,6 +77,21 @@ export function SiteFooter() {
             <li className="text-white/40">Consultas: lunes a viernes, 9 a 18 h.</li>
           </ul>
         </div>
+      </div>
+
+      <div className="mx-auto mt-14 flex max-w-[1440px] flex-col gap-4 border-t border-white/10 pt-8 text-white/40 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; {year} Pegasus Pixels.</p>
+        <nav className="flex flex-wrap gap-6" aria-label="Legal">
+          {LEGAL_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="transition-colors hover:text-white"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </footer>
   );
