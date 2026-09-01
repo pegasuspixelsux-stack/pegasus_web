@@ -24,6 +24,9 @@
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
+  /* keep text at its authored size on mobile (no auto-inflation) */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -51,13 +54,14 @@ body {
   border-radius: 2px;
 }
 
-/* Scale the smallest text ~1.5x on phones (< 640px) for readability.
-   Redefining the type-scale tokens keeps `md:text-base` etc. intact. */
+/* Bump the small type scale on phones (< 640px) for readability. */
 @media (width < 40rem) {
   :root {
     --text-xs: 1.125rem;
     --text-xs--line-height: 1.5rem;
     --text-sm: 1.3125rem;
     --text-sm--line-height: 1.7rem;
+    --text-base: 1.125rem;
+    --text-base--line-height: 1.7rem;
   }
 }
