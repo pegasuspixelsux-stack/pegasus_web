@@ -50,3 +50,14 @@ body {
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+/* Scale the smallest text ~1.5x on phones (< 640px) for readability.
+   Redefining the type-scale tokens keeps `md:text-base` etc. intact. */
+@media (width < 40rem) {
+  :root {
+    --text-xs: 1.125rem;
+    --text-xs--line-height: 1.5rem;
+    --text-sm: 1.3125rem;
+    --text-sm--line-height: 1.7rem;
+  }
+}
