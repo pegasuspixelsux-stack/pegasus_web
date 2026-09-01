@@ -17,7 +17,7 @@ export const SECTORS: Sector[] = [
     title: "Inmobiliarias",
     subtitle: "Plataformas para portales y fichas de propiedades de alta gama.",
     image: "/sectores/inmobiliarias.jpg",
-    body: "Arquitectura digital diseñada para captar capitales de alta exigencia en Punta del Este, Buenos Aires y São Paulo. Cada plataforma integra galerías inmersivas de alta resolución, selectores multidivisa en tiempo real (USD, UYU, ARS) y motores de búsqueda geoespacial instantáneos que filtran propiedades por zonas exclusivas (La Barra, Manantiales, José Ignacio, Punta Ballena y Beverly Hills) sin recargar la página. Incorpora un sistema de gestión que prioriza el acceso directo a fichas técnicas detalladas, planos ejecutivos y un canal de contacto inmediato vía WhatsApp con los brokers, eliminando la fricción para el inversor internacional.",
+    body: "Arquitectura digital para captar capitales en Punta del Este, Buenos Aires y São Paulo. Galerías inmersivas en alta resolución, selectores multidivisa (USD, UYU, ARS) y búsqueda geoespacial instantánea por zonas exclusivas (La Barra, Manantiales, José Ignacio, Punta Ballena, Beverly Hills) sin recargar la página. Acceso directo a fichas técnicas, planos ejecutivos y contacto inmediato por WhatsApp con los brokers, eliminando la fricción para el inversor internacional.",
     samples: [
       {
         title: "Ficha inmersiva de propiedad",
@@ -38,7 +38,7 @@ export const SECTORS: Sector[] = [
     title: "Concesionarias",
     subtitle: "Showrooms digitales y catálogos de vehículos exclusivos.",
     image: "/sectores/car-dealers.jpg",
-    body: "Infraestructura de alta gama diseñada para exhibir y comercializar vehículos de lujo, SUVs y flotas selectas en el mercado de Maldonado. Cada showroom digital ofrece una experiencia visual inmersiva de alto contraste, tipografía depurada y galerías fotográficas en estudio que realzan cada línea del vehículo. Incorpora fichas técnicas de especificación avanzada, calculadoras de financiación interactiva y formularios dinámicos para tasación de permutas que canalizan al comprador directamente hacia la planta de ventas. Optimizado para ofrecer velocidad de carga instantánea en dispositivos móviles, asegurando que cada consulta de alto valor se convierta en un cliente en el salón.",
+    body: "Showrooms digitales de alto contraste para exhibir y comercializar vehículos exclusivos en Maldonado. Galerías en estudio, fichas técnicas avanzadas, calculadoras de financiación y tasación de permutas que conectan al comprador directamente con el equipo de ventas. Velocidad extrema en dispositivos móviles para maximizar conversiones.",
     samples: [
       {
         title: "Grilla de inventario dinámico",
