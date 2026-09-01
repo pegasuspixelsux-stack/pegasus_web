@@ -69,12 +69,12 @@ export function Sectors() {
                     />
                     {sector.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-sky-400 md:text-base">
+                  <p className="mt-4 text-base leading-relaxed text-sky-400">
                     {sector.subtitle}
                   </p>
 
                   {sector.body && (
-                    <p className="mt-8 border-t border-white/15 pt-8 text-sm leading-relaxed text-white/70">
+                    <p className="mt-8 border-t border-white/15 pt-8 text-base leading-relaxed text-white/70">
                       {sector.body}
                     </p>
                   )}
@@ -90,10 +90,10 @@ export function Sectors() {
                       viewport={{ once: true, amount: 0.6 }}
                       transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
                     >
-                      <h4 className="text-sm font-medium text-sky-400">
+                      <h4 className="text-base font-medium text-sky-400">
                         {sample.title}
                       </h4>
-                      <p className="text-xs leading-relaxed text-white/60">
+                      <p className="text-base leading-relaxed text-white/60">
                         {sample.desc}
                       </p>
                     </motion.div>
@@ -123,7 +123,7 @@ export function Sectors() {
         className="group flex items-center justify-center gap-3 border-t border-white/10 px-6 py-14 text-center transition-colors hover:bg-white/[0.03] lg:px-24"
       >
         <Plus className="h-4 w-4 text-white/40 transition-transform duration-300 group-hover:rotate-90 group-hover:text-white" />
-        <span className="text-sm text-white/50 transition-colors group-hover:text-white md:text-base">
+        <span className="text-base text-white/50 transition-colors group-hover:text-white">
           ¿Busca algo diferente? Desarrollos a medida para otros sectores
           selectos.
         </span>
