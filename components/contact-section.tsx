@@ -19,8 +19,6 @@ const EMAIL = "contacto@pegasuspixels.com";
 const PHONE_DISPLAY = "+598 99 000 000";
 const PHONE_HREF = "+59899000000";
 
-const SECTORS = ["Inmobiliarias", "Car Dealers", "Gastronomía", "Otro"];
-
 const inputClass =
   "w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2.5 text-white placeholder:text-white/30 focus:border-white/40 focus:outline-none";
 
@@ -29,7 +27,6 @@ export function ContactSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [sector, setSector] = useState("");
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
 
@@ -45,7 +42,6 @@ export function ContactSection() {
       `Nombre: ${name.trim()}`,
       ...(email.trim() ? [`Email: ${email.trim()}`] : []),
       ...(phone.trim() ? [`Teléfono / WhatsApp: ${phone.trim()}`] : []),
-      ...(sector ? [`Sector: ${sector}`] : []),
       ...(message.trim() ? [`Mensaje: ${message.trim()}`] : []),
     ];
     window.open(
@@ -187,33 +183,6 @@ export function ContactSection() {
                   className={inputClass}
                 />
               </div>
-
-              <fieldset>
-                <legend className="mb-2 text-xs uppercase tracking-wider text-white/40">
-                  Sector o industria
-                </legend>
-                <div className="flex flex-wrap gap-2">
-                  {SECTORS.map((option) => (
-                    <button
-                      key={option}
-                      type="button"
-                      aria-pressed={sector === option}
-                      onClick={() =>
-                        setSector((current) =>
-                          current === option ? "" : option,
-                        )
-                      }
-                      className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${
-                        sector === option
-                          ? "border-sky-400 bg-sky-400/15 text-sky-100"
-                          : "border-white/10 text-white/60 hover:border-white/30 hover:text-white"
-                      }`}
-                    >
-                      {option}
-                    </button>
-                  ))}
-                </div>
-              </fieldset>
 
               <div>
                 <label htmlFor="cf-message" className="sr-only">

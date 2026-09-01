@@ -18,9 +18,9 @@ export function About() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.6, ease: EASE }}
-        className="mx-auto max-w-3xl space-y-6 text-center"
+        className="mx-auto max-w-3xl space-y-6 text-left sm:text-center"
       >
-        <h2 className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-sky-400">
+        <h2 className="flex items-center justify-start gap-2 text-xs uppercase tracking-[0.2em] text-sky-400 sm:justify-center">
           <Sparkle className="h-3.5 w-3.5 fill-current" />
           Quiénes Somos
         </h2>
@@ -28,7 +28,7 @@ export function About() {
           Ingeniería de software y diseño de alto rendimiento con base en
           Punta del Este.
         </p>
-        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
+        <p className="max-w-2xl text-[1rem] leading-relaxed text-white/60 sm:mx-auto">
           Pegasus Pixels es un estudio de ingeniería de software y diseño de
           alta gama con base en Punta del Este, especializado en crear
           infraestructura digital, velocidad extrema y sistemas de captación
