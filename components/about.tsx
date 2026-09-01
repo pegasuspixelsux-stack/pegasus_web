@@ -1,10 +1,24 @@
+"use client";
+
+import { motion, useReducedMotion } from "motion/react";
+
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export function About() {
+  const reduce = useReducedMotion();
+
   return (
     <section
       id="nosotros"
       className="flex min-h-[50vh] items-center border-b border-white/10 bg-surface px-6 py-28 lg:px-24 lg:py-32"
     >
-      <div className="mx-auto max-w-3xl space-y-6 text-center">
+      <motion.div
+        initial={reduce ? false : { opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.6, ease: EASE }}
+        className="mx-auto max-w-3xl space-y-6 text-center"
+      >
         <h2 className="text-xs uppercase tracking-[0.2em] text-white/40">
           Quiénes Somos
         </h2>
@@ -12,7 +26,7 @@ export function About() {
           Ingeniería de software y diseño de alto rendimiento con base en
           Maldonado.
         </p>
-      </div>
+      </motion.div>
     </section>
   );
 }

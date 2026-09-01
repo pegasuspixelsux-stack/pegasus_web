@@ -50,15 +50,3 @@ body {
   outline-offset: 2px;
   border-radius: 2px;
 }
-
-/* Bump the smallest text ~1.5x on phones for readability */
-@media (width < 40rem) {
-  .text-xs {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-  }
-  .text-sm {
-    font-size: 1.3125rem;
-    line-height: 1.7rem;
-  }
-}

@@ -17,7 +17,7 @@ export const SECTORS: Sector[] = [
     title: "Inmobiliarias",
     subtitle: "Plataformas para portales y fichas de propiedades de alta gama.",
     image: "/sectores/inmobiliarias.jpg",
-    body: "Arquitectura digital para captar capitales en Punta del Este, Buenos Aires y São Paulo. Galerías inmersivas en alta resolución, selectores multidivisa (USD, UYU, ARS) y búsqueda geoespacial instantánea por zonas exclusivas (La Barra, Manantiales, José Ignacio, Punta Ballena, Beverly Hills) sin recargar la página. Acceso directo a fichas técnicas, planos ejecutivos y contacto inmediato por WhatsApp con los brokers, eliminando la fricción para el inversor internacional.",
+    body: "Plataformas para captar inversores de Punta del Este, Buenos Aires y São Paulo. Galerías inmersivas, selector multidivisa (USD, UYU, ARS) y búsqueda instantánea por zona exclusiva. Fichas técnicas, planos y contacto directo con brokers por WhatsApp.",
     samples: [
       {
         title: "Ficha inmersiva de propiedad",
@@ -38,7 +38,7 @@ export const SECTORS: Sector[] = [
     title: "Concesionarias",
     subtitle: "Showrooms digitales y catálogos de vehículos exclusivos.",
     image: "/sectores/car-dealers.jpg",
-    body: "Showrooms digitales de alto contraste para exhibir y comercializar vehículos exclusivos en Maldonado. Galerías en estudio, fichas técnicas avanzadas, calculadoras de financiación y tasación de permutas que conectan al comprador directamente con el equipo de ventas. Velocidad extrema en dispositivos móviles para maximizar conversiones.",
+    body: "Showrooms digitales de alto contraste para vehículos exclusivos en Maldonado. Galerías en estudio, calculadora de financiación, tasación de permutas y contacto directo con ventas.",
     samples: [
       {
         title: "Grilla de inventario dinámico",
@@ -60,6 +60,7 @@ export const SECTORS: Sector[] = [
     subtitle: "Experiencias, cartas digitales y reservas privadas.",
     image: "/sectores/gastronomia.jpg",
     imagePosition: "50% 20%",
+    body: "Plataformas para restaurantes, paradores y beach clubs de Punta del Este. Cartas digitales ultrarrápidas, reservas por turno y comensales, y concierge por WhatsApp para la temporada alta y la retención local todo el año.",
     samples: [
       {
         title: "Menú móvil ultrarrápido",

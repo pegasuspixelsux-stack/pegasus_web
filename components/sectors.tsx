@@ -57,29 +57,38 @@ export function Sectors() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: EASE }}
               >
-                <h3 className="text-4xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
-                  {sector.title}
-                </h3>
-                <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70 md:text-base">
-                  {sector.subtitle}
-                </p>
-
-                {sector.body && (
-                  <p className="mt-8 max-w-3xl border-t border-white/15 pt-8 text-sm leading-relaxed text-white/70">
-                    {sector.body}
+                <div className="lg:max-w-[33%]">
+                  <h3 className="text-4xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+                    {sector.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-white/70 md:text-base">
+                    {sector.subtitle}
                   </p>
-                )}
+
+                  {sector.body && (
+                    <p className="mt-8 border-t border-white/15 pt-8 text-sm leading-relaxed text-white/70">
+                      {sector.body}
+                    </p>
+                  )}
+                </div>
 
                 <div className="mt-8 grid gap-6 border-t border-white/15 pt-8 md:grid-cols-3">
-                  {sector.samples.map((sample) => (
-                    <div key={sample.title} className="space-y-2">
+                  {sector.samples.map((sample, i) => (
+                    <motion.div
+                      key={sample.title}
+                      className="space-y-2"
+                      initial={reduce ? false : { opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.6 }}
+                      transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
+                    >
                       <h4 className="text-sm font-medium text-white">
                         {sample.title}
                       </h4>
                       <p className="text-xs leading-relaxed text-white/60">
                         {sample.desc}
                       </p>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
@@ -88,16 +97,20 @@ export function Sectors() {
         ))}
       </div>
 
-      <a
+      <motion.a
         href="#contacto"
+        initial={reduce ? false : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{ duration: 0.6, ease: EASE }}
         className="group flex items-center justify-center gap-3 border-t border-white/10 px-6 py-14 text-center transition-colors hover:bg-white/[0.03] lg:px-24"
       >
-        <Plus className="h-4 w-4 text-white/40 transition-colors group-hover:text-white" />
+        <Plus className="h-4 w-4 text-white/40 transition-transform duration-300 group-hover:rotate-90 group-hover:text-white" />
         <span className="text-sm text-white/50 transition-colors group-hover:text-white md:text-base">
           ¿Busca algo diferente? Desarrollos a medida para otros sectores
           selectos.
         </span>
-      </a>
+      </motion.a>
     </section>
   );
 }

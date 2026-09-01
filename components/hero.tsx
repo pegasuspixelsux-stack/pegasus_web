@@ -5,6 +5,12 @@ import { ArrowDown } from "lucide-react";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
+const HEADLINE_LINES = [
+  "Infraestructura",
+  "digital y sistemas de",
+  "captación autónoma",
+];
+
 export function Hero() {
   const reduce = useReducedMotion();
 
@@ -15,20 +21,25 @@ export function Hero() {
     >
       <div className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-between px-6 lg:px-24">
         <div className="my-auto max-w-5xl py-16">
-          <motion.h1
-            initial={reduce ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: EASE }}
-            className="text-4xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl"
-          >
-            Infraestructura digital y sistemas de captación autónoma
-          </motion.h1>
+          <h1 className="text-4xl font-light leading-[1.15] tracking-tight md:text-5xl lg:text-6xl">
+            {HEADLINE_LINES.map((line, i) => (
+              <motion.span
+                key={line}
+                className="block pb-[0.05em]"
+                initial={reduce ? false : { opacity: 0, y: "0.3em" }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1 + i * 0.12, ease: EASE }}
+              >
+                {line}
+              </motion.span>
+            ))}
+          </h1>
         </div>
 
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
+          transition={{ duration: 0.8, delay: 0.55, ease: EASE }}
           className="flex flex-col items-start justify-between gap-6 text-sm text-white/60 md:flex-row md:items-end"
         >
           <p className="max-w-md">
