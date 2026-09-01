@@ -71,18 +71,24 @@ export function ChatWidget() {
   const [timeline, setTimeline] = useState<(typeof TIMELINES)[number] | null>(
     null,
   );
-  const [contact, setContact] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
 
   const step = !industry ? 1 : !pain ? 2 : !timeline ? 3 : 4;
+  const canSend = name.trim() !== "" && phone.trim() !== "";
 
   const send = () => {
+    if (!canSend) return;
     const message = [
       "Hola, escribo desde el Agente de Pegasus Pixels.",
       "",
       `Sector: ${industry}`,
       `Desafío: ${pain}`,
       `Horizonte: ${timeline?.label} [${timeline?.tag}]`,
-      `Contacto: ${contact.trim() || "(a completar)"}`,
+      `Nombre: ${name.trim()}`,
+      `WhatsApp: ${phone.trim()}`,
+      ...(email.trim() ? [`Email: ${email.trim()}`] : []),
     ].join("\n");
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
@@ -158,17 +164,43 @@ export function ChatWidget() {
                   <Bot>
                     Perfecto. Para enviarle casos de estudio específicos de su
                     sector y coordinar una charla directa con nuestro equipo,
-                    por favor déjenos su nombre y número de WhatsApp:
+                    por favor déjenos sus datos:
                   </Bot>
-                  <label htmlFor={contactId} className="sr-only">
-                    Nombre y teléfono
+                  <label htmlFor={`${contactId}-name`} className="sr-only">
+                    Nombre
                   </label>
                   <input
-                    id={contactId}
+                    id={`${contactId}-name`}
                     type="text"
-                    placeholder="Nombre y teléfono"
-                    value={contact}
-                    onChange={(event) => setContact(event.target.value)}
+                    autoComplete="name"
+                    placeholder="Nombre"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                    className="w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-white placeholder-white/30 focus:border-white/40 focus:outline-none"
+                  />
+                  <label htmlFor={`${contactId}-phone`} className="sr-only">
+                    Teléfono o WhatsApp
+                  </label>
+                  <input
+                    id={`${contactId}-phone`}
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    placeholder="Teléfono / WhatsApp"
+                    value={phone}
+                    onChange={(event) => setPhone(event.target.value)}
+                    className="w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-white placeholder-white/30 focus:border-white/40 focus:outline-none"
+                  />
+                  <label htmlFor={`${contactId}-email`} className="sr-only">
+                    Email (opcional)
+                  </label>
+                  <input
+                    id={`${contactId}-email`}
+                    type="email"
+                    autoComplete="email"
+                    placeholder="Email (opcional)"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
                     onKeyDown={(event) => {
                       if (event.key === "Enter") send();
                     }}
@@ -177,7 +209,8 @@ export function ChatWidget() {
                   <button
                     type="button"
                     onClick={send}
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-white px-3 py-2.5 font-medium text-black transition-colors hover:bg-white/90"
+                    disabled={!canSend}
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-white px-3 py-2.5 font-medium text-black transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     Conectar con un especialista
                     <ArrowRight className="h-4 w-4" />

@@ -105,7 +105,7 @@ export function Sectors() {
             <Link
               href={`/${sector.slug}`}
               aria-label={`Ver ${sector.title}`}
-              className="absolute bottom-6 right-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white text-black transition-transform hover:scale-105 active:scale-95 lg:bottom-10 lg:right-10"
+              className="absolute bottom-6 right-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-sky-400 text-white transition-transform hover:scale-105 active:scale-95 lg:bottom-10 lg:right-10"
             >
               <ArrowUpRight className="h-5 w-5" />
             </Link>
