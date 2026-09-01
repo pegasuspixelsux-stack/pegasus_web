@@ -14,7 +14,7 @@ export type Sector = {
 export const SECTORS: Sector[] = [
   {
     id: "inmobiliarias",
-    title: "Inmobiliarias",
+    title: "Desarrollos Inmobiliarios",
     subtitle: "Plataformas para portales y fichas de propiedades de alta gama.",
     image: "/sectores/inmobiliarias.jpg",
     body: "Plataformas para captar inversores de Punta del Este, Buenos Aires y São Paulo. Galerías inmersivas, selector multidivisa (USD, UYU, ARS) y búsqueda instantánea por zona exclusiva. Fichas técnicas, planos y contacto directo con brokers por WhatsApp.",

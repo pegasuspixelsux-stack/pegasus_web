@@ -1,7 +1,7 @@
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const SECTOR_LINKS = [
-  { href: "#sectores", label: "Inmobiliarias" },
+  { href: "#sectores", label: "Desarrollos Inmobiliarios" },
   { href: "#sectores", label: "Concesionarias" },
   { href: "#sectores", label: "Gastronomía" },
   { href: "#contacto", label: "Soluciones a medida" },
