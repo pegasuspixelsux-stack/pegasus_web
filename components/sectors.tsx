@@ -26,7 +26,9 @@ export function Sectors() {
             Verticales Principales
           </h2>
           <p className="text-4xl font-light leading-[1.1] tracking-tight text-black md:text-5xl lg:text-6xl">
-            Soluciones específicas diseñadas para el estándar local.
+            Soluciones específicas diseñadas
+            <br />
+            para el estándar local.
           </p>
         </motion.div>
       </div>
