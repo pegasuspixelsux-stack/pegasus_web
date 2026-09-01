@@ -1,10 +1,13 @@
+import Link from "next/link";
+import { SECTORS } from "@/lib/sectors";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const SECTOR_LINKS = [
-  { href: "#sectores", label: "Desarrollos Inmobiliarios" },
-  { href: "#sectores", label: "Concesionarias" },
-  { href: "#sectores", label: "Gastronomía" },
-  { href: "#contacto", label: "Soluciones a medida" },
+  ...SECTORS.map((sector) => ({
+    href: `/${sector.slug}`,
+    label: sector.title,
+  })),
+  { href: "/#contacto", label: "Soluciones a medida" },
 ];
 
 const TECH_ITEMS = [
@@ -29,23 +32,23 @@ export function SiteFooter() {
         </div>
 
         <nav className="space-y-3" aria-label="Sectores">
-          <p className="uppercase tracking-[0.2em] text-white/40">Sectores</p>
+          <p className="uppercase tracking-[0.2em] text-yellow-400">Sectores</p>
           <ul className="space-y-2">
             {SECTOR_LINKS.map((link) => (
               <li key={link.label}>
-                <a
+                <Link
                   href={link.href}
                   className="transition-colors hover:text-white"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
         <div className="space-y-3">
-          <p className="uppercase tracking-[0.2em] text-white/40">Tecnología</p>
+          <p className="uppercase tracking-[0.2em] text-yellow-400">Tecnología</p>
           <ul className="space-y-2">
             {TECH_ITEMS.map((item) => (
               <li key={item}>{item}</li>
@@ -54,7 +57,7 @@ export function SiteFooter() {
         </div>
 
         <div className="space-y-3">
-          <p className="uppercase tracking-[0.2em] text-white/40">Contacto</p>
+          <p className="uppercase tracking-[0.2em] text-yellow-400">Contacto</p>
           <ul className="space-y-2">
             <li>
               <a

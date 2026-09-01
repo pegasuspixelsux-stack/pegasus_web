@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
-import { Plus } from "lucide-react";
+import { ArrowUpRight, Plus, Sparkle } from "lucide-react";
 import { SECTORS } from "@/lib/sectors";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -20,7 +21,8 @@ export function Sectors() {
           transition={{ duration: 0.6, ease: EASE }}
           className="mx-auto max-w-[1440px] px-6 pb-16 pt-24 lg:px-24"
         >
-          <h2 className="mb-3 text-xs uppercase tracking-[0.2em] text-black/50">
+          <h2 className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-yellow-600">
+            <Sparkle className="h-3.5 w-3.5 fill-current" />
             Verticales Principales
           </h2>
           <p className="text-4xl font-light leading-[1.1] tracking-tight text-black md:text-5xl lg:text-6xl">
@@ -50,7 +52,7 @@ export function Sectors() {
               className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"
             />
 
-            <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 py-16 lg:px-24">
+            <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 pb-28 pt-16 lg:px-24">
               <motion.div
                 initial={reduce ? false : { opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +63,7 @@ export function Sectors() {
                   <h3 className="text-4xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
                     {sector.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-white/70 md:text-base">
+                  <p className="mt-4 text-sm leading-relaxed text-yellow-400 md:text-base">
                     {sector.subtitle}
                   </p>
 
@@ -82,7 +84,7 @@ export function Sectors() {
                       viewport={{ once: true, amount: 0.6 }}
                       transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
                     >
-                      <h4 className="text-sm font-medium text-white">
+                      <h4 className="text-sm font-medium text-yellow-400">
                         {sample.title}
                       </h4>
                       <p className="text-xs leading-relaxed text-white/60">
@@ -93,6 +95,14 @@ export function Sectors() {
                 </div>
               </motion.div>
             </div>
+
+            <Link
+              href={`/${sector.slug}`}
+              aria-label={`Ver ${sector.title}`}
+              className="absolute bottom-6 right-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white text-black transition-transform hover:scale-105 active:scale-95 lg:bottom-10 lg:right-10"
+            >
+              <ArrowUpRight className="h-5 w-5" />
+            </Link>
           </article>
         ))}
       </div>

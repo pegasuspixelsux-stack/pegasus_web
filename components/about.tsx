@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import { Sparkle } from "lucide-react";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -19,7 +20,8 @@ export function About() {
         transition={{ duration: 0.6, ease: EASE }}
         className="mx-auto max-w-3xl space-y-6 text-center"
       >
-        <h2 className="text-xs uppercase tracking-[0.2em] text-white/40">
+        <h2 className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-yellow-400">
+          <Sparkle className="h-3.5 w-3.5 fill-current" />
           Quiénes Somos
         </h2>
         <p className="text-4xl font-light leading-[1.1] tracking-tight text-white/90 md:text-5xl lg:text-6xl">

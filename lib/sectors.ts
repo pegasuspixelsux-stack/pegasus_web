@@ -1,5 +1,7 @@
 export type Sector = {
   id: string;
+  /** URL slug for the sector's dedicated page (`/<slug>`). */
+  slug: string;
   title: string;
   subtitle: string;
   /** Background photography served from `public/sectores/`. */
@@ -14,6 +16,7 @@ export type Sector = {
 export const SECTORS: Sector[] = [
   {
     id: "inmobiliarias",
+    slug: "inmobiliarias",
     title: "Desarrollos Inmobiliarios",
     subtitle: "Plataformas para portales y fichas de propiedades de alta gama.",
     image: "/sectores/inmobiliarias.jpg",
@@ -35,6 +38,7 @@ export const SECTORS: Sector[] = [
   },
   {
     id: "car-dealers",
+    slug: "concesionarias",
     title: "Concesionarias",
     subtitle: "Showrooms digitales y catálogos de vehículos exclusivos.",
     image: "/sectores/car-dealers.jpg",
@@ -56,6 +60,7 @@ export const SECTORS: Sector[] = [
   },
   {
     id: "gastronomia",
+    slug: "gastronomia",
     title: "Gastronomía",
     subtitle: "Experiencias, cartas digitales y reservas privadas.",
     image: "/sectores/gastronomia.jpg",
@@ -77,3 +82,7 @@ export const SECTORS: Sector[] = [
     ],
   },
 ];
+
+export function getSectorBySlug(slug: string): Sector | undefined {
+  return SECTORS.find((sector) => sector.slug === slug);
+}
