@@ -15,7 +15,7 @@ export function CTA() {
           href={buildWhatsAppUrl({ vertical: "general" })}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-medium text-black transition-colors hover:bg-white/90"
+          className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-[0.9375rem] font-medium text-black transition-colors hover:bg-white/90"
         >
           <span>Iniciar conversación por WhatsApp</span>
           <ArrowRight className="h-4 w-4" />
