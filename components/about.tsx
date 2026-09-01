@@ -26,6 +26,15 @@ export function About() {
           Ingeniería de software y diseño de alto rendimiento con base en
           Maldonado.
         </p>
+        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
+          Pegasus Pixels es un estudio de ingeniería de software y diseño de
+          alta gama con base en Maldonado, especializado en crear
+          infraestructura digital, velocidad extrema y sistemas de captación
+          autónoma. No utilizamos plantillas genéricas ni mantenimiento
+          innecesario; desarrollamos tecnología a medida que elimina la
+          fricción visual y convierte el tráfico de alto valor en operaciones
+          concretas.
+        </p>
       </motion.div>
     </section>
   );
