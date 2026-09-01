@@ -1,7 +1,10 @@
+import { Building2, Car, UtensilsCrossed, type LucideIcon } from "lucide-react";
+
 export type Sector = {
   id: string;
   /** URL slug for the sector's dedicated page (`/<slug>`). */
   slug: string;
+  icon: LucideIcon;
   title: string;
   subtitle: string;
   /** Background photography served from `public/sectores/`. */
@@ -17,6 +20,7 @@ export const SECTORS: Sector[] = [
   {
     id: "inmobiliarias",
     slug: "inmobiliarias",
+    icon: Building2,
     title: "Desarrollos Inmobiliarios",
     subtitle: "Plataformas para portales y fichas de propiedades de alta gama.",
     image: "/sectores/inmobiliarias.jpg",
@@ -39,6 +43,7 @@ export const SECTORS: Sector[] = [
   {
     id: "car-dealers",
     slug: "concesionarias",
+    icon: Car,
     title: "Concesionarias",
     subtitle: "Showrooms digitales y catálogos de vehículos exclusivos.",
     image: "/sectores/car-dealers.jpg",
@@ -61,6 +66,7 @@ export const SECTORS: Sector[] = [
   {
     id: "gastronomia",
     slug: "gastronomia",
+    icon: UtensilsCrossed,
     title: "Gastronomía",
     subtitle: "Experiencias, cartas digitales y reservas privadas.",
     image: "/sectores/gastronomia.jpg",

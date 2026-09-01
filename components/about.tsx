@@ -20,17 +20,17 @@ export function About() {
         transition={{ duration: 0.6, ease: EASE }}
         className="mx-auto max-w-3xl space-y-6 text-center"
       >
-        <h2 className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-yellow-400">
+        <h2 className="flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-sky-400">
           <Sparkle className="h-3.5 w-3.5 fill-current" />
           Quiénes Somos
         </h2>
         <p className="text-4xl font-light leading-[1.1] tracking-tight text-white/90 md:text-5xl lg:text-6xl">
           Ingeniería de software y diseño de alto rendimiento con base en
-          Maldonado.
+          Punta del Este.
         </p>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
           Pegasus Pixels es un estudio de ingeniería de software y diseño de
-          alta gama con base en Maldonado, especializado en crear
+          alta gama con base en Punta del Este, especializado en crear
           infraestructura digital, velocidad extrema y sistemas de captación
           autónoma. No utilizamos plantillas genéricas ni mantenimiento
           innecesario; desarrollamos tecnología a medida que elimina la

@@ -35,6 +35,8 @@ export default async function SectorPage({
   const sector = getSectorBySlug(slug);
   if (!sector) notFound();
 
+  const Icon = sector.icon;
+
   return (
     <main>
       <section className="relative isolate flex min-h-[88vh] flex-col justify-end overflow-hidden border-b border-white/10 md:min-h-[92vh]">
@@ -61,10 +63,14 @@ export default async function SectorPage({
             Volver a sectores
           </Link>
 
-          <h1 className="max-w-4xl text-4xl font-light leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+          <h1 className="flex max-w-4xl items-center gap-4 text-4xl font-light leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+            <Icon
+              className="h-9 w-9 shrink-0 text-sky-400 md:h-12 md:w-12"
+              strokeWidth={1.5}
+            />
             {sector.title}
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-yellow-400">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-sky-400">
             {sector.subtitle}
           </p>
           {sector.body && (
@@ -77,7 +83,7 @@ export default async function SectorPage({
 
       <section className="border-b border-white/10 bg-surface px-6 py-24 lg:px-24">
         <div className="mx-auto max-w-[1440px]">
-          <h2 className="mb-12 text-xs uppercase tracking-[0.2em] text-yellow-400">
+          <h2 className="mb-12 text-xs uppercase tracking-[0.2em] text-sky-400">
             Qué construimos
           </h2>
           <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">

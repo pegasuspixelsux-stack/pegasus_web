@@ -21,7 +21,7 @@ export function Sectors() {
           transition={{ duration: 0.6, ease: EASE }}
           className="mx-auto max-w-[1440px] px-6 pb-16 pt-24 lg:px-24"
         >
-          <h2 className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-yellow-600">
+          <h2 className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-sky-600">
             <Sparkle className="h-3.5 w-3.5 fill-current" />
             Verticales Principales
           </h2>
@@ -34,7 +34,9 @@ export function Sectors() {
       </div>
 
       <div>
-        {SECTORS.map((sector) => (
+        {SECTORS.map((sector) => {
+          const Icon = sector.icon;
+          return (
           <article
             key={sector.id}
             className="relative isolate flex min-h-[68vh] flex-col justify-end overflow-hidden border-t border-white/10 md:min-h-[75vh]"
@@ -60,10 +62,14 @@ export function Sectors() {
                 transition={{ duration: 0.6, ease: EASE }}
               >
                 <div className="lg:max-w-[33%]">
-                  <h3 className="text-4xl font-light leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+                  <h3 className="flex items-center gap-3 text-2xl font-light leading-[1.15] tracking-tight md:text-3xl lg:whitespace-nowrap lg:text-4xl">
+                    <Icon
+                      className="h-7 w-7 shrink-0 text-sky-400"
+                      strokeWidth={1.5}
+                    />
                     {sector.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-yellow-400 md:text-base">
+                  <p className="mt-4 text-sm leading-relaxed text-sky-400 md:text-base">
                     {sector.subtitle}
                   </p>
 
@@ -84,7 +90,7 @@ export function Sectors() {
                       viewport={{ once: true, amount: 0.6 }}
                       transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
                     >
-                      <h4 className="text-sm font-medium text-yellow-400">
+                      <h4 className="text-sm font-medium text-sky-400">
                         {sample.title}
                       </h4>
                       <p className="text-xs leading-relaxed text-white/60">
@@ -104,7 +110,8 @@ export function Sectors() {
               <ArrowUpRight className="h-5 w-5" />
             </Link>
           </article>
-        ))}
+          );
+        })}
       </div>
 
       <motion.a
