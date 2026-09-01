@@ -48,12 +48,16 @@ export function Sectors() {
                 sizes="100vw"
                 style={{ objectPosition: sector.imagePosition ?? "50% 50%" }}
                 className={`object-cover transition-opacity duration-700 ease-out ${
-                  open ? "opacity-100" : "opacity-90"
+                  open ? "opacity-70" : "opacity-90"
                 }`}
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                className={`absolute inset-0 bg-gradient-to-t transition-colors duration-500 ${
+                  open
+                    ? "from-black/90 via-black/70 to-black/50"
+                    : "from-black/80 via-black/20 to-transparent"
+                }`}
               />
 
               <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 py-16 lg:px-24">
@@ -101,6 +105,11 @@ export function Sectors() {
                         transition={{ duration: 0.4, ease: EASE }}
                         className="overflow-hidden"
                       >
+                        {sector.body && (
+                          <p className="mt-8 max-w-3xl border-t border-white/15 pt-8 text-sm leading-relaxed text-white/70">
+                            {sector.body}
+                          </p>
+                        )}
                         <div className="mt-8 grid gap-6 border-t border-white/15 pt-8 md:grid-cols-3">
                           {sector.samples.map((sample) => (
                             <div key={sample.title} className="space-y-2">

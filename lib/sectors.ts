@@ -6,6 +6,8 @@ export type Sector = {
   image: string;
   /** `object-position` for the background image (default `50% 50%`). */
   imagePosition?: string;
+  /** Long-form description revealed when the card is expanded. */
+  body?: string;
   samples: { title: string; desc: string }[];
 };
 
@@ -15,6 +17,7 @@ export const SECTORS: Sector[] = [
     title: "Inmobiliarias",
     subtitle: "Plataformas para portales y fichas de propiedades de alta gama.",
     image: "/sectores/inmobiliarias.jpg",
+    body: "Arquitectura digital diseñada para captar capitales de alta exigencia en Punta del Este, Buenos Aires y São Paulo. Cada plataforma integra galerías inmersivas de alta resolución, selectores multidivisa en tiempo real (USD, UYU, ARS) y motores de búsqueda geoespacial instantáneos que filtran propiedades por zonas exclusivas (La Barra, Manantiales, José Ignacio, Punta Ballena y Beverly Hills) sin recargar la página. Incorpora un sistema de gestión que prioriza el acceso directo a fichas técnicas detalladas, planos ejecutivos y un canal de contacto inmediato vía WhatsApp con los brokers, eliminando la fricción para el inversor internacional.",
     samples: [
       {
         title: "Ficha inmersiva de propiedad",
