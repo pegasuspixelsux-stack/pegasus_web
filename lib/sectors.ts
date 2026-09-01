@@ -38,6 +38,7 @@ export const SECTORS: Sector[] = [
     title: "Concesionarias",
     subtitle: "Showrooms digitales y catálogos de vehículos exclusivos.",
     image: "/sectores/car-dealers.jpg",
+    body: "Infraestructura de alta gama diseñada para exhibir y comercializar vehículos de lujo, SUVs y flotas selectas en el mercado de Maldonado. Cada showroom digital ofrece una experiencia visual inmersiva de alto contraste, tipografía depurada y galerías fotográficas en estudio que realzan cada línea del vehículo. Incorpora fichas técnicas de especificación avanzada, calculadoras de financiación interactiva y formularios dinámicos para tasación de permutas que canalizan al comprador directamente hacia la planta de ventas. Optimizado para ofrecer velocidad de carga instantánea en dispositivos móviles, asegurando que cada consulta de alto valor se convierta en un cliente en el salón.",
     samples: [
       {
         title: "Grilla de inventario dinámico",
