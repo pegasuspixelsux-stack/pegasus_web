@@ -5,10 +5,10 @@ import { ArrowDown } from "lucide-react";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-const HEADLINE_LINES = [
-  "Infraestructura",
-  "digital y sistemas de",
-  "captación autónoma",
+const HEADLINE_LINES: { text: string; accent?: boolean }[][] = [
+  [{ text: "Infraestructura", accent: true }],
+  [{ text: "digital", accent: true }, { text: " y sistemas de" }],
+  [{ text: "captación autónoma" }],
 ];
 
 export function Hero() {
@@ -24,13 +24,17 @@ export function Hero() {
           <h1 className="text-4xl font-light leading-[1.15] tracking-tight md:text-5xl lg:text-6xl">
             {HEADLINE_LINES.map((line, i) => (
               <motion.span
-                key={line}
+                key={i}
                 className="block pb-[0.05em]"
                 initial={reduce ? false : { opacity: 0, y: "0.3em" }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 + i * 0.12, ease: EASE }}
               >
-                {line}
+                {line.map((seg, j) => (
+                  <span key={j} className={seg.accent ? "text-sky-400" : undefined}>
+                    {seg.text}
+                  </span>
+                ))}
               </motion.span>
             ))}
           </h1>

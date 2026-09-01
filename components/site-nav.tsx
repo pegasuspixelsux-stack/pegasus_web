@@ -15,7 +15,7 @@ export function SiteNav() {
           href="/#top"
           className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition-opacity hover:opacity-70"
         >
-          Pegasus Pixels
+          Pegasus <span className="text-sky-400">Pixels</span>
         </Link>
 
         <ul className="hidden items-center gap-10 md:flex">
