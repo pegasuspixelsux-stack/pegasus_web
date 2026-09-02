@@ -2,14 +2,36 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  LayoutDashboard,
+  Landmark,
+  PackageCheck,
+  SlidersHorizontal,
+  Smartphone,
+  Wallet,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
-import type { VerticalLandingData } from "@/lib/verticals";
+import type { BenefitIcon, VerticalLandingData } from "@/lib/verticals";
 import { ContactDetails } from "@/components/contact-details";
 import { Eyebrow } from "@/components/eyebrow";
 import { FeatureCard } from "@/components/feature-card";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
+
+const BENEFIT_ICONS: Record<BenefitIcon, LucideIcon> = {
+  landmark: Landmark,
+  smartphone: Smartphone,
+  dashboard: LayoutDashboard,
+  wallet: Wallet,
+  package: PackageCheck,
+  workflow: Workflow,
+  sliders: SlidersHorizontal,
+};
 
 const H1 =
   "text-balance text-[2rem] font-light leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-h1";
@@ -87,7 +109,11 @@ export function VerticalLanding({ data }: { data: VerticalLandingData }) {
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3">
           {benefits.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08} className="h-full">
-              <FeatureCard title={item.title} className="h-full">
+              <FeatureCard
+                title={item.title}
+                icon={BENEFIT_ICONS[item.icon]}
+                className="h-full"
+              >
                 {item.body}
               </FeatureCard>
             </Reveal>

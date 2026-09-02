@@ -1,10 +1,14 @@
-/** Raised #161616 card with an H3 title and muted body copy. */
+import type { LucideIcon } from "lucide-react";
+
+/** Raised #161616 card with an optional sky-400 icon, an H3 title and body. */
 export function FeatureCard({
   title,
+  icon: Icon,
   children,
   className,
 }: {
   title: string;
+  icon?: LucideIcon;
   children: React.ReactNode;
   className?: string;
 }) {
@@ -14,7 +18,14 @@ export function FeatureCard({
         className ?? ""
       }`}
     >
-      <h3 className="text-h3 font-light tracking-tight text-foreground">
+      {Icon ? (
+        <Icon className="h-6 w-6 text-sky-400" strokeWidth={1.5} />
+      ) : null}
+      <h3
+        className={`text-h3 font-light tracking-tight text-foreground ${
+          Icon ? "mt-4" : ""
+        }`}
+      >
         {title}
       </h3>
       <p className="mt-3 text-base text-muted">{children}</p>

@@ -1,3 +1,13 @@
+/** Icon keys resolved to lucide components in components/vertical-landing.tsx. */
+export type BenefitIcon =
+  | "landmark"
+  | "smartphone"
+  | "dashboard"
+  | "wallet"
+  | "package"
+  | "workflow"
+  | "sliders";
+
 export type VerticalLandingData = {
   slug: string;
   metaTitle: string;
@@ -15,7 +25,7 @@ export type VerticalLandingData = {
   benefits: {
     eyebrow: string;
     h2: string;
-    items: { title: string; body: string }[];
+    items: { title: string; body: string; icon: BenefitIcon }[];
   };
   comparison: {
     eyebrow: string;
@@ -59,14 +69,17 @@ export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
       h2: "Lo que gana tu inmobiliaria con infraestructura propia",
       items: [
         {
+          icon: "landmark",
           title: "Cierres ágiles con capital externo",
           body: "Presentá masterplans interactivos, fichas inmersivas y selectores multidivisa en tiempo real (USD, UYU, ARS) que eliminan las dudas del comprador de alto poder adquisitivo.",
         },
         {
+          icon: "smartphone",
           title: "Velocidad y adaptabilidad total",
           body: "Carga instantánea en cualquier smartphone. Tus agentes inmobiliarios pueden mostrar el inventario actualizado desde cualquier lugar, durante una obra o reunión presencial.",
         },
         {
+          icon: "dashboard",
           title: "Autonomía operativa absoluta",
           body: "Panel de administración interno ultrarrápido para cargar, modificar o retirar propiedades en segundos, sin dependencias de terceros ni mantenimientos mensuales absurdos.",
         },
@@ -121,14 +134,17 @@ export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
       h2: "Lo que gana tu local con infraestructura propia",
       items: [
         {
+          icon: "wallet",
           title: "Cero comisiones por pedido",
           body: "Cada orden procesada mediante tu plataforma va directo a tu operación. Eliminá intermediarios y recuperá el margen operativo que las aplicaciones de terceros erosionan cada mes.",
         },
         {
+          icon: "smartphone",
           title: "Pedidos ágiles desde cualquier dispositivo",
           body: "Carta digital de carga instantánea optimizada para smartphones. Ideal para que los comensales consulten el menú, pidan a la mesa o soliciten delivery sin fricciones ni esperas.",
         },
         {
+          icon: "package",
           title: "Gestión de stock en tiempo real",
           body: "Panel de administración ultrarrápido para actualizar platos, modificar precios o pausar ítems agotados en segundos, sin dependencias externas ni costos de mantenimiento absurdos.",
         },
@@ -182,14 +198,17 @@ export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
       h2: "Lo que gana tu concesionaria con infraestructura propia",
       items: [
         {
+          icon: "workflow",
           title: "Ecosistema uniforme y planificado",
           body: "Sincronizamos tu sitio web, publicaciones en redes sociales y campañas publicitarias bajo una misma línea visual y estratégica. Guía al cliente a través de un embudo limpio y sin fricciones, desde el primer impacto hasta la venta final.",
         },
         {
+          icon: "smartphone",
           title: "Tu vidriera principal en el celular",
           body: "Fichas técnicas detalladas, galerías fotográficas en alta resolución y selectores de financiación optimizados para ofrecer una experiencia visual impecable en cualquier smartphone.",
         },
         {
+          icon: "sliders",
           title: "Autonomía operativa absoluta",
           body: "Un panel de administración interno ultrarrápido para publicar nuevos ingresos, actualizar precios o marcar vehículos como reservados en segundos, sin intermediarios ni dependencias técnicas.",
         },

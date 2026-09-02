@@ -3,17 +3,24 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { ArrowLeft, ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { SECTORS } from "@/lib/sectors";
 import { NavSearch } from "@/components/nav-search";
 
+const SOLUCIONES_LINKS = SECTORS.map((sector) => ({
+  href: `/${sector.slug}`,
+  label: sector.title,
+}));
+
 const LINKS = [
   { href: "/#top", label: "Inicio" },
-  { href: "/#soluciones", label: "Soluciones" },
-  { href: "/#sectores", label: "Sectores" },
+  { href: "/#soluciones", label: "Soluciones", menu: SOLUCIONES_LINKS },
   { href: "/#nosotros", label: "Nosotros" },
   { href: "/#contacto", label: "Contacto" },
 ];
+
+const navLinkClass =
+  "text-xs uppercase tracking-[0.15em] text-muted transition-colors hover:text-white";
 
 export function SiteNav() {
   const reduce = useReducedMotion();
@@ -30,16 +37,39 @@ export function SiteNav() {
         </Link>
 
         <ul className="hidden items-center gap-6 nav:flex nav:gap-9">
-          {LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-xs uppercase tracking-[0.15em] text-muted transition-colors hover:text-white"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {LINKS.map((link) =>
+            link.menu ? (
+              <li key={link.href} className="group relative">
+                <Link
+                  href={link.href}
+                  className={`inline-flex items-center gap-1 ${navLinkClass}`}
+                >
+                  {link.label}
+                  <ChevronDown className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
+                </Link>
+                <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <ul className="min-w-[240px] rounded-xl border border-white/10 bg-surface-card p-1.5 shadow-2xl">
+                    {link.menu.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className="block rounded-lg px-3 py-2.5 text-xs uppercase tracking-[0.12em] text-muted transition-colors hover:bg-white/5 hover:text-white"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ) : (
+              <li key={link.href}>
+                <Link href={link.href} className={navLinkClass}>
+                  {link.label}
+                </Link>
+              </li>
+            ),
+          )}
         </ul>
 
         <div className="hidden items-center gap-4 nav:flex">
