@@ -64,7 +64,16 @@ export function VerticalLanding({
         <Reveal className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <Eyebrow icon="dot">Operación local, estándares globales.</Eyebrow>
-            <h1 className={`mt-6 ${H1}`}>{hero.h1}</h1>
+            <h1 className={`mt-6 ${H1}`}>
+              {hero.h1Accent ? (
+                <>
+                  <span className="text-accent">{hero.h1Accent}</span>
+                  {hero.h1.slice(hero.h1Accent.length)}
+                </>
+              ) : (
+                hero.h1
+              )}
+            </h1>
             <p className="mt-6 max-w-xl text-base text-muted">{hero.lead}</p>
           </div>
 

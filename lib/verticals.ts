@@ -28,7 +28,12 @@ export type VerticalLandingData = {
   slug: string;
   metaTitle: string;
   metaDescription: string;
-  hero: { h1: string; lead: string };
+  hero: {
+    h1: string;
+    /** Leading substring of `h1` rendered in the accent color. */
+    h1Accent?: string;
+    lead: string;
+  };
   /** Faux-platform card shown in the hero right column. */
   mockup: {
     image: string;
@@ -68,6 +73,7 @@ export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
       "Infraestructura comercial para inmobiliarias y desarrolladores: catálogo propio, selector multidivisa, captación directa por WhatsApp y autonomía operativa total.",
     hero: {
       h1: "Infraestructura comercial para inmobiliarias y desarrolladores",
+      h1Accent: "Infraestructura comercial",
       lead: "Dejá de depender de portales genéricos que te cobran comisiones abusivas y te entregan leads fríos. Te damos tu propia infraestructura digital de alta gama para que tu inmobiliaria controle su inventario, proyecte una imagen de exclusividad absoluta y cierre más operaciones.",
     },
     mockup: {
@@ -161,6 +167,7 @@ export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
       "Infraestructura digital para restaurantes y polos gastronómicos: sistema de pedidos y reservas propio, sin comisiones, con tu identidad visual y gestión de stock en tiempo real.",
     hero: {
       h1: "Infraestructura digital para restaurantes y polo gastronómico",
+      h1Accent: "Infraestructura digital",
       lead: "Dejá de regalar hasta el treinta por ciento de tu rentabilidad a las aplicaciones de delivery tradicionales y de depender de algoritmos ajenos. Te entregamos un sistema de pedidos y reservas propio, rápido y con tu identidad visual, diseñado para blindar tu margen de ganancia y fidelizar a tu clientela.",
     },
     mockup: {
@@ -255,6 +262,7 @@ export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
       "Infraestructura digital y catálogo de alta gama para concesionarias: showroom digital inmersivo, ecosistema multicanal unificado y control total del inventario.",
     hero: {
       h1: "Infraestructura digital y catálogo de alta gama para concesionarias",
+      h1Accent: "Infraestructura digital",
       lead: "La primera impresión que un cliente tiene de tu concesionaria ya no ocurre en tu salón de ventas físico, sino en la pantalla de su teléfono. En un mercado automotriz profundamente fragmentado, te entregamos un sistema centralizado de inventario y conversión que diferencia tu marca, unifica tu presencia digital y acelera cada cierre.",
     },
     mockup: {

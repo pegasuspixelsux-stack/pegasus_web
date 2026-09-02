@@ -7,8 +7,8 @@
    -----------
    Dark   bg #0A0A0A · surface #0F0F0F · card #161616
           text #F3F3F3 · secondary #A0A0A0 · accent sky-400 (#38BDF8)
-   Light  bg #FFFFFF · surface #F4F4F6 · card #FFFFFF
-          text #0A0A0A · secondary #57575C · accent blue-600 (#2563EB)
+   Light  bg #FFFFFF · surface (soft white) #F8F8F8 · card #FFFFFF
+          text #0A0A0A · secondary #57575C · accent blue-700 (#1D4ED8)
    Sections alternate A / B for a subtle step between bands.
    Type   locked to a 16px base grid — h1 64/1.1 · h2 48/1.2 · h3 24/1.5 · body 16/1.6
    ========================================================================== */
@@ -32,14 +32,14 @@
 
 :root[data-theme="light"] {
   --background: #ffffff;
-  --surface: #f4f4f6;
-  --surface-raised: #f0f0f2;
+  --surface: #f8f8f8; /* soft white — the alternate band */
+  --surface-raised: #f4f4f4;
   --surface-card: #ffffff;
   --foreground: #0a0a0a;
   --muted: #57575c;
   --border: rgba(0, 0, 0, 0.12);
-  --accent: #2563eb; /* blue-600 — vibrant on white */
-  --accent-hover: #1d4ed8; /* blue-700 */
+  --accent: #1d4ed8; /* blue-700 — deep blue on white */
+  --accent-hover: #1e40af; /* blue-800 */
   --on-accent: #ffffff;
 }
 
