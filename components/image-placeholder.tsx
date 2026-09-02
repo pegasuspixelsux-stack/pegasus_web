@@ -12,6 +12,7 @@ export function ImagePlaceholder({
   hint,
   className,
   aspect = "aspect-[16/10]",
+  fit = "cover",
 }: {
   src?: string;
   alt?: string;
@@ -19,6 +20,7 @@ export function ImagePlaceholder({
   hint?: string;
   className?: string;
   aspect?: string;
+  fit?: "cover" | "contain";
 }) {
   return (
     <div
@@ -32,7 +34,7 @@ export function ImagePlaceholder({
           alt={alt}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover"
+          className={fit === "contain" ? "object-contain" : "object-cover"}
         />
       ) : (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center">

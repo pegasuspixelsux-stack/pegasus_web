@@ -32,13 +32,15 @@ const EDITIONS = [
     name: "Oceanus",
     character: "Editorial y patrimonial",
     body: "Azul profundo, dorado y tipografía serif. Para marcas consolidadas, desarrollos de referencia y carteras de lujo que comunican trayectoria.",
-    hint: "public/inmobiliarias/oceanus.png",
+    src: "/sectores/oceanus_1.png",
+    aspect: "aspect-[1590/740]",
   },
   {
     name: "Calypso",
     character: "Costero y contemporáneo",
     body: "Luz, aire y alto contraste. Para propuestas frente al mar, obra nueva y públicos internacionales que buscan una estética fresca y directa.",
-    hint: "public/inmobiliarias/calypso.png",
+    src: "/sectores/calypso_1.png",
+    aspect: "aspect-[1598/737]",
   },
 ];
 
@@ -138,9 +140,11 @@ export function WhiteLabelPitch() {
                 <p className="mt-3 text-base text-muted">{edition.body}</p>
                 <ImagePlaceholder
                   className="mt-6"
-                  aspect="aspect-[16/10]"
+                  aspect={edition.aspect}
+                  fit="contain"
+                  src={edition.src}
+                  alt={`Edición ${edition.name} de la plataforma`}
                   label={`Vista previa · edición ${edition.name}`}
-                  hint={edition.hint}
                 />
               </div>
             </Reveal>
