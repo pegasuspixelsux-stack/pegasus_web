@@ -120,7 +120,7 @@ export function ContactSection() {
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 rounded-2xl border border-white/10 bg-[#121212] p-8 lg:p-10"
+          className="space-y-4 rounded-2xl border border-white/10 bg-[#121212] p-2.5"
         >
           {sent ? (
             <div className="flex flex-col items-center gap-4 py-10 text-center">
@@ -201,9 +201,9 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={!canSubmit}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-white py-4 text-sm font-medium uppercase tracking-wider text-black transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-40"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-sky-400 py-4 text-[1rem] font-medium text-black transition-colors hover:bg-sky-300 disabled:cursor-not-allowed disabled:opacity-40"
               >
-                Enviar consulta
+                enviar consulta
                 <ArrowRight className="h-4 w-4" />
               </button>
             </>

@@ -90,8 +90,9 @@ export function Sectors() {
                       viewport={{ once: true, amount: 0.6 }}
                       transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
                     >
-                      <h4 className="text-base font-medium text-sky-400">
+                      <h4 className="flex items-center gap-1.5 text-base font-medium text-sky-400">
                         {sample.title}
+                        <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
                       </h4>
                       <p className="text-base leading-relaxed text-white/60">
                         {sample.desc}
