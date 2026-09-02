@@ -38,7 +38,13 @@ const H1 =
 const H2 =
   "text-balance text-[1.75rem] font-light leading-[1.2] tracking-tight md:text-h2";
 
-export function VerticalLanding({ data }: { data: VerticalLandingData }) {
+export function VerticalLanding({
+  data,
+  children,
+}: {
+  data: VerticalLandingData;
+  children?: React.ReactNode;
+}) {
   const { hero, mockup, control, benefits, comparison, cta } = data;
   const whatsappHref = buildWhatsAppUrl({ vertical: cta.whatsappVertical });
 
@@ -180,6 +186,8 @@ export function VerticalLanding({ data }: { data: VerticalLandingData }) {
           </div>
         </Reveal>
       </section>
+
+      {children}
     </main>
   );
 }
