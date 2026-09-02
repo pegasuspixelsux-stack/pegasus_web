@@ -1,9 +1,5 @@
-import {
-  ArrowUpRight,
-  ConciergeBell,
-  KanbanSquare,
-  Sparkles,
-} from "lucide-react";
+import { ConciergeBell, KanbanSquare, Sparkles } from "lucide-react";
+import { EditionsSlideshow } from "@/components/editions-slideshow";
 import { Eyebrow } from "@/components/eyebrow";
 import { FeatureCard } from "@/components/feature-card";
 import { ImagePlaceholder } from "@/components/image-placeholder";
@@ -28,25 +24,6 @@ const PILLARS = [
     icon: ConciergeBell,
     title: "Embudo de agente concierge premium",
     body: "Un flujo conversacional diseñado para despertar la curiosidad del comprador de alto patrimonio y convertirla en una visita agendada con tu equipo.",
-  },
-];
-
-const EDITIONS = [
-  {
-    name: "Oceanus",
-    character: "Editorial y patrimonial",
-    body: "Azul profundo, dorado y tipografía serif. Para marcas consolidadas, desarrollos de referencia y carteras de lujo que comunican trayectoria.",
-    src: "/sectores/oceanus_1.png",
-    aspect: "aspect-[1590/740]",
-    url: "https://oceanus-kappa.vercel.app/",
-  },
-  {
-    name: "Calypso",
-    character: "Costero y contemporáneo",
-    body: "Luz, aire y alto contraste. Para propuestas frente al mar, obra nueva y públicos internacionales que buscan una estética fresca y directa.",
-    src: "/sectores/calypso_1.png",
-    aspect: "aspect-[1598/737]",
-    url: "https://calypso-six.vercel.app/",
   },
 ];
 
@@ -130,38 +107,9 @@ export function WhiteLabelPitch() {
             Cada edición se entrega lista para adaptar a tu marca.
           </p>
         </Reveal>
-        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
-          {EDITIONS.map((edition, i) => (
-            <Reveal key={edition.name} delay={i * 0.08} className="h-full">
-              <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-surface-card p-6 lg:p-8">
-                <p className="text-xs uppercase tracking-[0.2em] text-sky-400">
-                  {edition.character}
-                </p>
-                <h3 className="mt-3 text-h3 font-light tracking-tight text-foreground">
-                  {edition.name}
-                </h3>
-                <p className="mt-3 text-base text-muted">{edition.body}</p>
-                <ImagePlaceholder
-                  className="mt-6"
-                  aspect={edition.aspect}
-                  fit="contain"
-                  src={edition.src}
-                  alt={`Edición ${edition.name} de la plataforma`}
-                  label={`Vista previa · edición ${edition.name}`}
-                />
-                <a
-                  href={edition.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-1.5 self-start text-xs uppercase tracking-[0.15em] text-sky-400 transition-colors hover:text-sky-300"
-                >
-                  Ver más
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal className="mt-12">
+          <EditionsSlideshow />
+        </Reveal>
       </Section>
     </>
   );
