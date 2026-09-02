@@ -22,7 +22,7 @@ export function FeatureCard({
         <Icon className="h-6 w-6 text-accent" strokeWidth={1.5} />
       ) : null}
       <h3
-        className={`text-h3 font-light tracking-tight text-foreground ${
+        className={`text-h3 font-normal tracking-tight text-foreground ${
           Icon ? "mt-4" : ""
         }`}
       >

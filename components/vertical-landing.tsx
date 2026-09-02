@@ -35,9 +35,9 @@ const BENEFIT_ICONS: Record<BenefitIcon, LucideIcon> = {
 };
 
 const H1 =
-  "text-balance text-[2rem] font-light leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-h1";
+  "text-balance text-[2rem] font-normal leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-h1";
 const H2 =
-  "text-balance text-[1.75rem] font-light leading-[1.2] tracking-tight md:text-h2";
+  "text-balance text-[1.75rem] font-normal leading-[1.2] tracking-tight md:text-h2";
 
 export function VerticalLanding({
   data,
@@ -149,7 +149,7 @@ export function VerticalLanding({
               <p className="text-xs uppercase tracking-[0.2em] text-muted">
                 {comparison.before.label}
               </p>
-              <h3 className="mt-3 text-h3 font-light tracking-tight text-foreground">
+              <h3 className="mt-3 text-h3 font-normal tracking-tight text-foreground">
                 {comparison.before.title}
               </h3>
               <p className="mt-3 text-base text-muted">
@@ -163,7 +163,7 @@ export function VerticalLanding({
                 <Check className="h-3.5 w-3.5" />
                 {comparison.after.label}
               </p>
-              <h3 className="mt-3 text-h3 font-light tracking-tight text-foreground">
+              <h3 className="mt-3 text-h3 font-normal tracking-tight text-foreground">
                 {comparison.after.title}
               </h3>
               <p className="mt-3 text-base text-muted">

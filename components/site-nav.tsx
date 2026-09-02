@@ -135,7 +135,7 @@ export function SiteNav() {
                     <Link
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="block py-3 text-h3 font-light tracking-tight text-foreground transition-colors hover:text-foreground"
+                      className="block py-3 text-h3 font-normal tracking-tight text-foreground transition-colors hover:text-foreground"
                     >
                       {link.label}
                     </Link>
@@ -152,7 +152,7 @@ export function SiteNav() {
                     <Link
                       href={`/${sector.slug}`}
                       onClick={() => setOpen(false)}
-                      className="block py-2 text-base font-light text-muted transition-colors hover:text-foreground"
+                      className="block py-2 text-base font-normal text-muted transition-colors hover:text-foreground"
                     >
                       {sector.title}
                     </Link>

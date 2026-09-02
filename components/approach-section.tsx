@@ -29,7 +29,7 @@ export function ApproachSection() {
           <p className="mb-4 text-xs uppercase tracking-[0.2em] text-accent">
             Enfoque
           </p>
-          <h2 className="text-[2rem] font-light leading-[1.2] tracking-tight md:text-h2">
+          <h2 className="text-[2rem] font-normal leading-[1.2] tracking-tight md:text-h2">
             Sistemas comerciales
             <br />
             de alta conversión

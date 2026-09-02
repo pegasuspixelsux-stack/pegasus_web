@@ -24,7 +24,7 @@ export function Sectors() {
           <Sparkle className="h-3.5 w-3.5 fill-current" />
           Verticales Principales
         </h2>
-        <p className="text-balance text-[2rem] font-light leading-[1.2] tracking-tight md:text-h2">
+        <p className="text-balance text-[2rem] font-normal leading-[1.2] tracking-tight md:text-h2">
           Soluciones específicas diseñadas
           <br />
           con estándares globales.
@@ -48,7 +48,7 @@ export function Sectors() {
               >
                 <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
                   <div>
-                    <h3 className="flex items-center gap-3 text-h3 font-light tracking-tight">
+                    <h3 className="flex items-center gap-3 text-h3 font-normal tracking-tight">
                       <Icon
                         className="h-7 w-7 shrink-0 text-accent"
                         strokeWidth={1.5}

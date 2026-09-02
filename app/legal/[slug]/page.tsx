@@ -45,7 +45,7 @@ export default async function LegalPage({
         Volver al inicio
       </Link>
 
-      <h1 className="text-[2rem] font-light leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem] lg:text-h1">
+      <h1 className="text-[2rem] font-normal leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem] lg:text-h1">
         {title}
       </h1>
       <p className="mt-8 text-base text-muted">

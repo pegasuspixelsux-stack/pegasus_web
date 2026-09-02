@@ -17,7 +17,7 @@ import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
 
 const H2 =
-  "text-balance text-[1.75rem] font-light leading-[1.2] tracking-tight md:text-h2";
+  "text-balance text-[1.75rem] font-normal leading-[1.2] tracking-tight md:text-h2";
 
 const ADVANTAGE_ICONS: Record<string, LucideIcon> = {
   target: Target,

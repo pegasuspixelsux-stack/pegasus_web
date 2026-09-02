@@ -94,7 +94,7 @@ export function Slideshow({
                 {slide.eyebrow}
               </p>
             ) : null}
-            <h3 className="mt-1.5 text-[1.75rem] font-light leading-[1.1] tracking-tight text-foreground md:text-4xl">
+            <h3 className="mt-1.5 text-[1.75rem] font-normal leading-[1.1] tracking-tight text-foreground md:text-4xl">
               {slide.title}
             </h3>
             {slide.body ? (

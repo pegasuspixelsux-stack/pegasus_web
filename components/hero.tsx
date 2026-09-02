@@ -37,7 +37,7 @@ export function Hero() {
             </span>
             Estándares globales.
           </motion.p>
-          <h1 className="text-pretty text-[2.25rem] font-light leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem] lg:text-h1">
+          <h1 className="text-pretty text-[2.25rem] font-normal leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem] lg:text-h1">
             {HEADLINE_LINES.map((line, i) => (
               <motion.span
                 key={i}

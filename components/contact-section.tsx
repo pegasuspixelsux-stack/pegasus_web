@@ -54,7 +54,7 @@ export function ContactSection() {
         className="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24"
       >
         <div>
-          <h2 className="text-[2rem] font-light leading-[1.2] tracking-tight md:text-h2">
+          <h2 className="text-[2rem] font-normal leading-[1.2] tracking-tight md:text-h2">
             Contacto directo
           </h2>
           <p className="mt-4 max-w-md text-base text-muted">

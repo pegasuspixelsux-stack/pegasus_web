@@ -24,7 +24,7 @@ export function About() {
           <Sparkle className="h-3.5 w-3.5 fill-current" />
           Quiénes Somos
         </h2>
-        <p className="text-balance text-[2rem] font-light leading-[1.2] tracking-tight md:text-h2">
+        <p className="text-balance text-[2rem] font-normal leading-[1.2] tracking-tight md:text-h2">
           Ingeniería y arquitectura de aplicaciones de alto rendimiento, con base en
           Punta del Este y oferta global.
         </p>
