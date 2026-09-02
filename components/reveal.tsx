@@ -1,8 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-
-const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+import { EASE } from "@/lib/motion";
 
 /** Scroll-into-view fade/rise used by every section on the marketing pages. */
 export function Reveal({

@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
+import { EASE } from "@/lib/motion";
 import { ArrowRight, Check } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
 import { ContactDetails } from "@/components/contact-details";
-
-const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const inputClass =
   "w-full rounded-lg border border-foreground/10 bg-foreground/[0.05] px-3 py-2.5 text-foreground placeholder:text-foreground/30 focus:border-foreground/40 focus:outline-none";
@@ -47,10 +46,10 @@ export function ContactSection() {
       className="scroll-mt-16 border-t border-foreground/10 bg-background px-6 py-24 lg:px-24 lg:py-32"
     >
       <motion.div
-        initial={reduce ? false : { opacity: 0, y: 24 }}
+        initial={reduce ? false : { opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.6, ease: EASE }}
+        transition={{ duration: 0.5, ease: EASE }}
         className="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24"
       >
         <div>

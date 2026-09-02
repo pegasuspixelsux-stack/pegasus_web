@@ -1,9 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import { EASE } from "@/lib/motion";
 import { ArrowDown } from "lucide-react";
-
-const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const HEADLINE_LINES: { text: string; accent?: boolean }[][] = [
   [{ text: "Infraestructura digital", accent: true }],
@@ -44,7 +43,7 @@ export function Hero() {
                 className="block pb-[0.05em]"
                 initial={reduce ? false : { opacity: 0, y: "0.3em" }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 + i * 0.12, ease: EASE }}
+                transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: EASE }}
               >
                 {line.map((seg, j) => (
                   <span key={j} className={seg.accent ? "text-accent" : undefined}>
@@ -59,7 +58,7 @@ export function Hero() {
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.55, ease: EASE }}
+          transition={{ duration: 0.6, delay: 0.5, ease: EASE }}
           className="flex flex-col items-start gap-6 text-base text-muted md:flex-row md:items-end md:justify-between"
         >
           <p className="max-w-md text-pretty">

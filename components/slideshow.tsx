@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { EASE } from "@/lib/motion";
 
 export type Slide = {
   /** Headline shown in the overlay. */
@@ -84,10 +85,10 @@ export function Slideshow({
           <motion.div
             key={slide.title}
             className="min-w-0"
-            initial={reduce ? false : { opacity: 0, y: 12 }}
+            initial={reduce ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={reduce ? { opacity: 0 } : { opacity: 0, y: -12 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: EASE }}
           >
             {slide.eyebrow ? (
               <p className="text-xs uppercase tracking-[0.2em] text-accent">
@@ -126,7 +127,7 @@ export function Slideshow({
                   onClick={() => setIndex(n)}
                   aria-label={`Ver ${s.title}`}
                   aria-current={n === index}
-                  className={`h-1.5 rounded-full transition-all ${
+                  className={`h-1.5 rounded-full transition-[width,background-color] duration-300 ${
                     n === index
                       ? "w-8 bg-accent"
                       : "w-4 bg-foreground/25 hover:bg-foreground/40"

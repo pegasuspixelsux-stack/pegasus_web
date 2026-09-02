@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { SECTORS } from "@/lib/sectors";
 import { NavSearch } from "@/components/nav-search";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { EASE } from "@/lib/motion";
 
 const SOLUCIONES_LINKS = SECTORS.map((sector) => ({
   href: `/${sector.slug}`,
@@ -109,7 +110,7 @@ export function SiteNav() {
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
-            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.2, ease: EASE }}
             className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-background px-6 py-5 nav:hidden"
           >
             <div className="flex items-center justify-between">

@@ -1,9 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import { EASE } from "@/lib/motion";
 import { Sparkle } from "lucide-react";
-
-const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function About() {
   const reduce = useReducedMotion();
@@ -14,10 +13,10 @@ export function About() {
       className="flex min-h-[50vh] items-center border-b border-foreground/10 bg-surface px-6 py-28 lg:px-24 lg:py-32"
     >
       <motion.div
-        initial={reduce ? false : { opacity: 0, y: 24 }}
+        initial={reduce ? false : { opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.6, ease: EASE }}
+        transition={{ duration: 0.5, ease: EASE }}
         className="mx-auto max-w-3xl space-y-6 text-left sm:text-center"
       >
         <h2 className="flex items-center justify-start gap-2 text-xs uppercase tracking-[0.2em] text-accent sm:justify-center">

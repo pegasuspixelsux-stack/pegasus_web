@@ -3,10 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
+import { EASE } from "@/lib/motion";
 import { ArrowUpRight, Plus, Sparkle } from "lucide-react";
 import { SECTORS } from "@/lib/sectors";
-
-const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function Sectors() {
   const reduce = useReducedMotion();
@@ -14,10 +13,10 @@ export function Sectors() {
   return (
     <section id="sectores" className="border-b border-foreground/10">
       <motion.div
-        initial={reduce ? false : { opacity: 0, y: 20 }}
+        initial={reduce ? false : { opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.6, ease: EASE }}
+        transition={{ duration: 0.5, ease: EASE }}
         className="mx-auto max-w-[1440px] px-6 pb-16 pt-24 lg:px-24"
       >
         <h2 className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-accent">
@@ -41,10 +40,10 @@ export function Sectors() {
           >
             <div className="mx-auto w-full max-w-[1440px] px-6 py-20 lg:px-24 lg:py-28">
               <motion.div
-                initial={reduce ? false : { opacity: 0, y: 24 }}
+                initial={reduce ? false : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.6, ease: EASE }}
+                transition={{ duration: 0.5, ease: EASE }}
               >
                 <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
                   <div>
@@ -120,7 +119,7 @@ export function Sectors() {
         initial={reduce ? false : { opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.8 }}
-        transition={{ duration: 0.6, ease: EASE }}
+        transition={{ duration: 0.5, ease: EASE }}
         className="group flex items-center justify-center gap-3 border-t border-foreground/10 px-6 py-14 text-center transition-colors hover:bg-foreground/[0.03] lg:px-24"
       >
         <Plus className="h-4 w-4 text-foreground/40 transition-transform duration-300 group-hover:rotate-90 group-hover:text-foreground" />

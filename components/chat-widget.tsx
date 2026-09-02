@@ -2,10 +2,9 @@
 
 import { useEffect, useId, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+import { EASE } from "@/lib/motion";
 import { MessageSquare, X, ArrowRight } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
-
-const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const INDUSTRIES = [
   "Inmobiliarias",
