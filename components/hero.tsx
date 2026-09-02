@@ -24,20 +24,20 @@ export function Hero() {
       />
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-between px-6 lg:px-24">
-        <div className="my-auto mx-auto max-w-5xl py-16 text-center">
+        <div className="my-auto max-w-5xl py-16">
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="mb-6 flex items-center justify-center gap-2.5 text-xs uppercase tracking-[0.2em] text-sky-400"
+            className="mb-6 flex items-center gap-2.5 text-xs uppercase tracking-[0.2em] text-sky-400"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75 motion-reduce:animate-none" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-400" />
             </span>
-            Operación local, estándares globales.
+            Estándares globales.
           </motion.p>
-          <h1 className="text-balance text-[1.75rem] font-light leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem] lg:text-h1">
+          <h1 className="text-pretty text-[2.25rem] font-light leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem] lg:text-h1">
             {HEADLINE_LINES.map((line, i) => (
               <motion.span
                 key={i}
@@ -60,9 +60,9 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55, ease: EASE }}
-          className="flex flex-col items-center gap-6 text-center text-base text-muted md:flex-row md:items-end md:justify-between md:text-left"
+          className="flex flex-col items-start gap-6 text-base text-muted md:flex-row md:items-end md:justify-between"
         >
-          <p className="max-w-md text-balance md:text-pretty">
+          <p className="max-w-md text-pretty">
             Ingeniería y arquitectura de aplicaciones, velocidad extrema y
             conversión directa sin fricción visual.
           </p>
