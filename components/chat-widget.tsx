@@ -126,8 +126,7 @@ export function ChatWidget() {
 
             <div className="max-h-[380px] space-y-3 overflow-y-auto p-4 text-xs">
               <Bot>
-                Bienvenido a Pegasus Pixels. ¿En qué sector opera su negocio en
-                Punta del Este?
+                Bienvenido a Pegasus Pixels. ¿En qué sector opera su negocio?
               </Bot>
               {industry && <Me>{industry}</Me>}
               {step === 1 && (
@@ -163,8 +162,8 @@ export function ChatWidget() {
                 <div className="space-y-3">
                   <Bot>
                     Perfecto. Para enviarle casos de estudio específicos de su
-                    sector y coordinar una charla directa con nuestro equipo,
-                    por favor déjenos sus datos:
+                    sector y coordinar una charla directa, por favor déjenos sus
+                    datos:
                   </Bot>
                   <label htmlFor={`${contactId}-name`} className="sr-only">
                     Nombre
@@ -230,7 +229,7 @@ export function ChatWidget() {
         aria-label={open ? "Cerrar Agente" : "Agente"}
         title="Agente"
         aria-expanded={open}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black shadow-lg transition-colors hover:bg-white/90"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-400 text-white shadow-lg transition-colors hover:bg-sky-300"
       >
         {open ? <X className="h-5 w-5" /> : <MessageSquare className="h-5 w-5" />}
       </motion.button>

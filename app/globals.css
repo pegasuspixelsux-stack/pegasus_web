@@ -2,23 +2,56 @@
 
 /* ==========================================================================
    Pegasus Pixels - dark luxury theme (single locked theme, no light mode)
+
+   Brand guide
+   -----------
+   Color      section tone A  #0A0A0A   section tone B  #0F0F0F
+              raised card     #161616
+              text  #F3F3F3   text secondary  #A0A0A0
+              accent  sky-400 (#38bdf8)
+   Sections alternate A / B for a subtle step between bands; the hero
+   opens on the darkest tone (A).
+   Type       locked to a 16px base grid
+              h1  64px / 1.1   (16 x 4)
+              h2  48px / 1.2   (16 x 3)
+              h3  24px / 1.3   (16 x 1.5)
+              body / small  16px   (16 x 1)   body 1.6 · small 1.5
    ========================================================================== */
 
 :root {
   --background: #0a0a0a;
-  --surface: #0d0d0d;
+  --surface: #0f0f0f;
   --surface-raised: #121212;
-  --foreground: #f5f5f7;
+  --surface-card: #161616;
+  --foreground: #f3f3f3;
+  --muted: #a0a0a0;
   --border: rgba(255, 255, 255, 0.1);
+
+  /* Body copy sits on the 16px base at a 1.6 rhythm. */
+  --text-base--line-height: 1.6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
+  --color-surface-card: var(--surface-card);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Extra stop between tablet and desktop: the full horizontal nav (5 links
+     + search + CTA) only unfolds here; below it the burger menu is used. */
+  --breakpoint-nav: 68rem;
+
+  /* Display scale - grid multiples of the 16px base. */
+  --text-h1: 4rem;
+  --text-h1--line-height: 1.1;
+  --text-h2: 3rem;
+  --text-h2--line-height: 1.2;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.3;
 }
 
 html {
@@ -43,25 +76,30 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Even out line lengths: balance display type, tidy paragraph rag. */
+h1,
+h2,
+h3,
+h4,
+.text-balance {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
 ::selection {
   background: #ffffff;
   color: #000000;
 }
 
 *:focus-visible {
-  outline: 2px solid rgba(245, 245, 247, 0.7);
+  outline: 2px solid rgba(243, 243, 243, 0.65);
   outline-offset: 2px;
   border-radius: 2px;
 }
 
-/* Bump the small type scale on phones (< 640px) for readability. */
-@media (width < 40rem) {
-  :root {
-    --text-xs: 1.125rem;
-    --text-xs--line-height: 1.5rem;
-    --text-sm: 1.3125rem;
-    --text-sm--line-height: 1.7rem;
-    --text-base: 1.125rem;
-    --text-base--line-height: 1.7rem;
-  }
-}
+/* The 16px grid is the same on every viewport — no mobile inflation. Only the
+   display scale (h1/h2/h3) steps down on small screens, via the responsive
+   `text-[…]` utilities on each heading. */

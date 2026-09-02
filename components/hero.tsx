@@ -6,9 +6,8 @@ import { ArrowDown } from "lucide-react";
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const HEADLINE_LINES: { text: string; accent?: boolean }[][] = [
-  [{ text: "Infraestructura", accent: true }],
-  [{ text: "digital", accent: true }, { text: " y sistemas de" }],
-  [{ text: "captación autónoma" }],
+  [{ text: "Infraestructura digital", accent: true }],
+  [{ text: "de adquisición y conversión automatizada." }],
 ];
 
 export function Hero() {
@@ -17,11 +16,28 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100dvh] flex-col border-b border-white/10 pb-12 pt-28 lg:pt-32"
+      className="relative flex min-h-[100dvh] flex-col overflow-hidden border-b border-white/10 pb-12 pt-28 lg:pt-32"
     >
-      <div className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-between px-6 lg:px-24">
-        <div className="my-auto max-w-5xl py-16">
-          <h1 className="text-4xl font-light leading-[1.15] tracking-tight md:text-5xl lg:text-6xl">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_50%_55%,rgba(56,189,248,0.18)_0%,rgba(56,189,248,0.06)_38%,transparent_72%)]"
+      />
+
+      <div className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-between px-6 lg:px-24">
+        <div className="my-auto mx-auto max-w-5xl py-16 text-center">
+          <motion.p
+            initial={reduce ? false : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: EASE }}
+            className="mb-6 flex items-center justify-center gap-2.5 text-xs uppercase tracking-[0.2em] text-sky-400"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75 motion-reduce:animate-none" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-400" />
+            </span>
+            Operación local, estándares globales.
+          </motion.p>
+          <h1 className="text-balance text-[1.75rem] font-light leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem] lg:text-h1">
             {HEADLINE_LINES.map((line, i) => (
               <motion.span
                 key={i}
@@ -44,11 +60,11 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55, ease: EASE }}
-          className="flex flex-col items-start justify-between gap-6 text-sm text-white/60 md:flex-row md:items-end"
+          className="flex flex-col items-center gap-6 text-center text-base text-muted md:flex-row md:items-end md:justify-between md:text-left"
         >
-          <p className="max-w-md">
-            Ingeniería de software, velocidad extrema y conversión directa sin
-            fricción visual.
+          <p className="max-w-md text-balance md:text-pretty">
+            Ingeniería y arquitectura de aplicaciones, velocidad extrema y
+            conversión directa sin fricción visual.
           </p>
           <a
             href="#sectores"

@@ -39,16 +39,16 @@ export default async function LegalPage({
     <main className="mx-auto min-h-[70vh] max-w-3xl px-6 pb-32 pt-40 lg:px-24">
       <Link
         href="/"
-        className="mb-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/60 transition-colors hover:text-white"
+        className="mb-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted transition-colors hover:text-white"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver al inicio
       </Link>
 
-      <h1 className="text-4xl font-light leading-[1.1] tracking-tight md:text-5xl">
+      <h1 className="text-[2rem] font-light leading-[1.1] tracking-tight sm:text-5xl md:text-[3.5rem] lg:text-h1">
         {title}
       </h1>
-      <p className="mt-8 leading-relaxed text-white/60">
+      <p className="mt-8 text-base text-muted">
         Este documento está en preparación. Para cualquier consulta sobre el
         tratamiento de datos, contáctenos por{" "}
         <a

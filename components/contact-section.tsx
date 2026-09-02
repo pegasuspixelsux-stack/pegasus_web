@@ -55,7 +55,7 @@ export function ContactSection() {
   return (
     <section
       id="contacto"
-      className="scroll-mt-16 border-t border-white/10 bg-[#0c0c0c] px-6 py-24 lg:px-24 lg:py-32"
+      className="scroll-mt-16 border-t border-white/10 bg-background px-6 py-24 lg:px-24 lg:py-32"
     >
       <motion.div
         initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -65,20 +65,21 @@ export function ContactSection() {
         className="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24"
       >
         <div>
-          <h2 className="text-3xl font-light tracking-tight text-white/90 md:text-4xl">
+          <h2 className="text-[2rem] font-light leading-[1.2] tracking-tight md:text-h2">
             Contacto directo
           </h2>
-          <p className="mt-4 max-w-md leading-relaxed text-white/60">
-            Atención personalizada para proyectos selectos. Escríbanos y
-            coordinamos una charla directa con el equipo.
+          <p className="mt-4 max-w-md text-base text-muted">
+            Atención personalizada para proyectos selectos.
+            <br />
+            Escríbanos y le responderemos.
           </p>
 
-          <ul className="mt-10 space-y-5">
+          <ul className="mt-10 max-w-md space-y-5">
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
               <a
                 href={`mailto:${EMAIL}`}
-                className="text-white/70 transition-colors hover:text-white"
+                className="text-muted transition-colors hover:text-white"
               >
                 {EMAIL}
               </a>
@@ -87,7 +88,7 @@ export function ContactSection() {
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
               <a
                 href={`tel:${PHONE_HREF}`}
-                className="text-white/70 transition-colors hover:text-white"
+                className="text-muted transition-colors hover:text-white"
               >
                 {PHONE_DISPLAY}
               </a>
@@ -98,21 +99,22 @@ export function ContactSection() {
                 href={buildWhatsAppUrl({ vertical: "general" })}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 transition-colors hover:text-white"
+                className="text-muted transition-colors hover:text-white"
               >
                 Chat directo por WhatsApp
               </a>
             </li>
             <li className="flex items-start gap-3">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-              <span className="text-white/70">
+              <span className="text-muted">
                 Lunes a viernes, 09:00 a 19:00 (UYT)
               </span>
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-              <span className="text-white/70">
-                Punta del Este y Maldonado, Uruguay
+              <span className="text-muted">
+                Sede en Punta del Este, Uruguay · Oferta global (EE. UU.,
+                Europa y Latinoamérica)
               </span>
             </li>
           </ul>
@@ -120,20 +122,20 @@ export function ContactSection() {
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 rounded-2xl border border-white/10 bg-[#121212] p-2.5"
+          className="space-y-4 rounded-2xl border border-white/10 bg-surface-card p-2.5"
         >
           {sent ? (
             <div className="flex flex-col items-center gap-4 py-10 text-center">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-400/15 text-sky-400">
                 <Check className="h-6 w-6" />
               </div>
-              <p className="text-white/80">
+              <p className="text-muted">
                 Abrimos WhatsApp con su mensaje. Le respondemos a la brevedad.
               </p>
               <button
                 type="button"
                 onClick={() => setSent(false)}
-                className="text-xs uppercase tracking-wider text-white/50 transition-colors hover:text-white"
+                className="text-xs uppercase tracking-wider text-muted transition-colors hover:text-white"
               >
                 Enviar otro mensaje
               </button>
@@ -200,10 +202,10 @@ export function ContactSection() {
 
               <button
                 type="submit"
-                disabled={!canSubmit}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-sky-400 py-4 text-[1rem] font-medium text-black transition-colors hover:bg-sky-300 disabled:cursor-not-allowed disabled:opacity-40"
+                aria-disabled={!canSubmit}
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-sky-400 py-4 text-base font-medium text-black transition-colors hover:bg-sky-300"
               >
-                enviar consulta
+                Enviar consulta
                 <ArrowRight className="h-4 w-4" />
               </button>
             </>

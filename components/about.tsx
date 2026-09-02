@@ -24,18 +24,20 @@ export function About() {
           <Sparkle className="h-3.5 w-3.5 fill-current" />
           Quiénes Somos
         </h2>
-        <p className="text-4xl font-light leading-[1.1] tracking-tight text-white/90 md:text-5xl lg:text-6xl">
-          Ingeniería de software y diseño de alto rendimiento con base en
-          Punta del Este.
+        <p className="text-balance text-[2rem] font-light leading-[1.2] tracking-tight md:text-h2">
+          Ingeniería y arquitectura de aplicaciones de alto rendimiento, con base en
+          Punta del Este y oferta global.
         </p>
-        <p className="max-w-2xl text-[1rem] leading-relaxed text-white/60 sm:mx-auto">
-          Pegasus Pixels es un estudio de ingeniería de software y diseño de
-          alta gama con base en Punta del Este, especializado en crear
-          infraestructura digital, velocidad extrema y sistemas de captación
-          autónoma. No utilizamos plantillas genéricas ni mantenimiento
-          innecesario; desarrollamos tecnología a medida que elimina la
-          fricción visual y convierte el tráfico de alto valor en operaciones
-          concretas.
+        <p className="max-w-2xl text-base text-muted sm:mx-auto">
+          Pegasus Pixels es un estudio de ingeniería y arquitectura de aplicaciones
+          y diseño de alta gama con sede en Punta del Este y oferta global
+          (EE. UU., Europa y Latinoamérica), especializado en crear
+          infraestructura digital, velocidad extrema y sistemas de adquisición
+          autónoma. Aplicamos estándares globales de arquitectura de aplicaciones,
+          sin las limitaciones de un mercado exclusivamente local: nada de
+          plantillas genéricas ni mantenimiento innecesario, sólo tecnología a
+          medida que elimina la fricción visual y convierte el tráfico de alto
+          valor en operaciones concretas.
         </p>
       </motion.div>
     </section>

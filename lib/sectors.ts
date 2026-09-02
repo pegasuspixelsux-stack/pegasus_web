@@ -13,8 +13,6 @@ export type Sector = {
   imagePosition?: string;
   /** Long-form description revealed when the card is expanded. */
   body?: string;
-  /** Optional right-hand column beside the sector's text block. */
-  aside?: { heading: string; items: string[] };
   samples: { title: string; desc: string }[];
 };
 
@@ -26,17 +24,7 @@ export const SECTORS: Sector[] = [
     title: "Desarrollos Inmobiliarios",
     subtitle: "Plataformas para portales y fichas de propiedades de alta gama.",
     image: "/sectores/inmobiliarias.jpg",
-    body: "Plataformas para captar inversores de Punta del Este, Buenos Aires y São Paulo. Galerías inmersivas, selector multidivisa (USD, UYU, ARS) y búsqueda instantánea por zona exclusiva. Fichas técnicas, planos y contacto directo con brokers por WhatsApp.",
-    aside: {
-      heading: "Zonas de foco",
-      items: [
-        "La Barra",
-        "Manantiales",
-        "José Ignacio",
-        "Punta Ballena",
-        "Beverly Hills",
-      ],
-    },
+    body: "Plataformas para captar inversores globales (EE. UU., Europa y Latinoamérica). Galerías inmersivas, selector multidivisa (USD, EUR, UYU, ARS) y búsqueda instantánea por zona exclusiva. Fichas técnicas, planos y contacto directo con brokers por WhatsApp.",
     samples: [
       {
         title: "Ficha inmersiva de propiedad",
@@ -50,6 +38,10 @@ export const SECTORS: Sector[] = [
         title: "Landing bilingüe para inversores",
         desc: "Estructuras optimizadas para capitales de Buenos Aires y São Paulo con descarga de planos y dossiers.",
       },
+      {
+        title: "Dossier de inversión descargable",
+        desc: "Ficha, planos y proyección de renta en un PDF listo para enviar al cliente.",
+      },
     ],
   },
   {
@@ -59,7 +51,7 @@ export const SECTORS: Sector[] = [
     title: "Concesionarias",
     subtitle: "Showrooms digitales y catálogos de vehículos exclusivos.",
     image: "/sectores/car-dealers.jpg",
-    body: "Showrooms digitales de alto contraste para vehículos exclusivos en Maldonado. Galerías en estudio, calculadora de financiación, tasación de permutas y contacto directo con ventas.",
+    body: "Showrooms digitales de alto contraste para concesionarias de vehículos exclusivos, con despliegue en cualquier mercado. Galerías en estudio, calculadora de financiación, tasación de permutas y contacto directo con ventas.",
     samples: [
       {
         title: "Grilla de inventario dinámico",
@@ -73,6 +65,10 @@ export const SECTORS: Sector[] = [
         title: "Showroom de estética oscura",
         desc: "Diseños minimalistas de alto contraste con reserva online y sistemas de citas.",
       },
+      {
+        title: "Comparador de modelos",
+        desc: "Fichas lado a lado con especificaciones, financiación y disponibilidad en tiempo real.",
+      },
     ],
   },
   {
@@ -82,8 +78,8 @@ export const SECTORS: Sector[] = [
     title: "Gastronomía",
     subtitle: "Experiencias, cartas digitales y reservas privadas.",
     image: "/sectores/gastronomia.jpg",
-    imagePosition: "50% 20%",
-    body: "Plataformas para restaurantes, paradores y beach clubs de Punta del Este. Cartas digitales ultrarrápidas, reservas por turno y comensales, y concierge por WhatsApp para la temporada alta y la retención local todo el año.",
+    imagePosition: "50% 40%",
+    body: "Plataformas para restaurantes, paradores y beach clubs de Punta del Este y destinos premium de cualquier región. Cartas digitales ultrarrápidas, reservas por turno y comensales, y concierge por WhatsApp para la temporada alta y la retención local todo el año.",
     samples: [
       {
         title: "Menú móvil ultrarrápido",
@@ -96,6 +92,10 @@ export const SECTORS: Sector[] = [
       {
         title: "Landing de Parador / Beach Club",
         desc: "Calendario de eventos exclusivos, cartas VIP y enlace directo al servicio de concierge.",
+      },
+      {
+        title: "Carta con fotografía profesional",
+        desc: "Cada plato en alta resolución, con etiquetas de alérgenos y sugerencias de maridaje.",
       },
     ],
   },

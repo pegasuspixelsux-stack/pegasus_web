@@ -24,10 +24,10 @@ export function Sectors() {
           <Sparkle className="h-3.5 w-3.5 fill-current" />
           Verticales Principales
         </h2>
-        <p className="text-4xl font-light leading-[1.1] tracking-tight text-white/90 md:text-5xl lg:text-6xl">
+        <p className="text-balance text-[2rem] font-light leading-[1.2] tracking-tight md:text-h2">
           Soluciones específicas diseñadas
           <br />
-          para el estándar local.
+          con estándares globales.
         </p>
       </motion.div>
 
@@ -37,97 +37,79 @@ export function Sectors() {
           return (
           <article
             key={sector.id}
-            className="relative flex min-h-[68vh] flex-col justify-end border-t border-white/10 bg-[#0d0d0d] md:min-h-[75vh]"
+            className="relative border-t border-white/10 bg-background"
           >
-            <div className="mx-auto w-full max-w-[1440px] px-6 pb-28 pt-16 lg:px-24">
+            <div className="mx-auto w-full max-w-[1440px] px-6 py-20 lg:px-24 lg:py-28">
               <motion.div
                 initial={reduce ? false : { opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.6, ease: EASE }}
               >
-                <div
-                  className={
-                    sector.aside
-                      ? "lg:grid lg:grid-cols-2 lg:items-start lg:gap-16"
-                      : ""
-                  }
-                >
-                  <div className={sector.aside ? "" : "lg:max-w-[33%]"}>
-                    <h3 className="flex items-center gap-3 text-2xl font-light leading-[1.15] tracking-tight md:text-3xl lg:whitespace-nowrap lg:text-4xl">
+                <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
+                  <div>
+                    <h3 className="flex items-center gap-3 text-h3 font-light tracking-tight">
                       <Icon
                         className="h-7 w-7 shrink-0 text-sky-400"
                         strokeWidth={1.5}
                       />
                       {sector.title}
                     </h3>
-                    <p className="mt-4 text-base leading-relaxed text-sky-400">
+                    <p className="mt-4 text-base text-sky-400">
                       {sector.subtitle}
                     </p>
-
                     {sector.body && (
-                      <p className="mt-8 border-t border-white/15 pt-8 text-base leading-relaxed text-white/70">
-                        {sector.body}
-                      </p>
+                      <p className="mt-6 text-base text-muted">{sector.body}</p>
                     )}
+
+                    <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      {sector.samples.map((sample, i) => (
+                        <motion.div
+                          key={sample.title}
+                          className="rounded-xl border border-white/10 bg-surface-card p-5"
+                          initial={reduce ? false : { opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, amount: 0.4 }}
+                          transition={{
+                            duration: 0.5,
+                            delay: i * 0.08,
+                            ease: EASE,
+                          }}
+                        >
+                          <h4 className="flex items-center gap-1.5 text-base font-medium text-sky-400">
+                            {sample.title}
+                            <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
+                          </h4>
+                          <p className="mt-2 text-base text-muted">
+                            {sample.desc}
+                          </p>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
 
-                  {sector.aside && (
-                    <div className="mt-10 border-t border-white/15 pt-8 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-1">
-                      <div className="relative h-56 overflow-hidden rounded-2xl border border-white/10 lg:h-72">
-                        <Image
-                          src={sector.image}
-                          alt=""
-                          fill
-                          sizes="(min-width: 1024px) 40vw, 100vw"
-                          style={{
-                            objectPosition: sector.imagePosition ?? "50% 50%",
-                          }}
-                          className="object-cover"
-                        />
-                      </div>
-                      <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/40">
-                        {sector.aside.heading}
-                      </p>
-                      <ul className="mt-4 space-y-2 text-base text-white/70">
-                        {sector.aside.items.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-
-                <div className="mt-8 grid gap-6 border-t border-white/15 pt-8 md:grid-cols-3">
-                  {sector.samples.map((sample, i) => (
-                    <motion.div
-                      key={sample.title}
-                      className="space-y-2"
-                      initial={reduce ? false : { opacity: 0, y: 16 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.6 }}
-                      transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
+                  <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 lg:sticky lg:top-24">
+                    <Image
+                      src={sector.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 45vw, 100vw"
+                      style={{
+                        objectPosition: sector.imagePosition ?? "50% 50%",
+                      }}
+                      className="object-cover"
+                    />
+                    <Link
+                      href={`/${sector.slug}`}
+                      aria-label={`Ver ${sector.title}`}
+                      className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-sky-400 text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
                     >
-                      <h4 className="flex items-center gap-1.5 text-base font-medium text-sky-400">
-                        {sample.title}
-                        <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
-                      </h4>
-                      <p className="text-base leading-relaxed text-white/60">
-                        {sample.desc}
-                      </p>
-                    </motion.div>
-                  ))}
+                      <ArrowUpRight className="h-5 w-5" />
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             </div>
-
-            <Link
-              href={`/${sector.slug}`}
-              aria-label={`Ver ${sector.title}`}
-              className="absolute bottom-6 right-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-sky-400 text-white transition-transform hover:scale-105 active:scale-95 lg:bottom-10 lg:right-10"
-            >
-              <ArrowUpRight className="h-5 w-5" />
-            </Link>
           </article>
           );
         })}
@@ -142,7 +124,7 @@ export function Sectors() {
         className="group flex items-center justify-center gap-3 border-t border-white/10 px-6 py-14 text-center transition-colors hover:bg-white/[0.03] lg:px-24"
       >
         <Plus className="h-4 w-4 text-white/40 transition-transform duration-300 group-hover:rotate-90 group-hover:text-white" />
-        <span className="text-base text-white/50 transition-colors group-hover:text-white">
+        <span className="text-base text-muted transition-colors group-hover:text-white">
           ¿Busca algo diferente? Desarrollos a medida para otros sectores
           selectos.
         </span>

@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pegasus Pixels | Infraestructura digital en Punta del Este",
+  title: "Pegasus Pixels | Infraestructura digital con base en Punta del Este",
   description:
-    "Ingeniería de software y sistemas de captación autónoma en Punta del Este: desarrollos inmobiliarios, concesionarias y gastronomía.",
+    "Ingeniería y arquitectura de aplicaciones con estándares globales. Sede en Punta del Este, Uruguay; oferta global (EE. UU., Europa y Latinoamérica) para desarrollos inmobiliarios, concesionarias y gastronomía.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
