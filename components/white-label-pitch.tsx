@@ -1,5 +1,5 @@
 import { ConciergeBell, KanbanSquare, Sparkles } from "lucide-react";
-import { EditionsSlideshow } from "@/components/editions-slideshow";
+import { Slideshow, type Slide } from "@/components/slideshow";
 import { Eyebrow } from "@/components/eyebrow";
 import { FeatureCard } from "@/components/feature-card";
 import { ImagePlaceholder } from "@/components/image-placeholder";
@@ -8,6 +8,23 @@ import { Section } from "@/components/section";
 
 const H2 =
   "text-balance text-[1.75rem] font-light leading-[1.2] tracking-tight md:text-h2";
+
+const EDITIONS: Slide[] = [
+  {
+    title: "Oceanus",
+    eyebrow: "Editorial y patrimonial",
+    body: "Azul profundo, dorado y tipografía serif. Para marcas consolidadas, desarrollos de referencia y carteras de lujo que comunican trayectoria.",
+    src: "/sectores/oceanus_1.png",
+    href: "https://oceanus-kappa.vercel.app/",
+  },
+  {
+    title: "Calypso",
+    eyebrow: "Costero y contemporáneo",
+    body: "Luz, aire y alto contraste. Para propuestas frente al mar, obra nueva y públicos internacionales que buscan una estética fresca y directa.",
+    src: "/sectores/calypso_1.png",
+    href: "https://calypso-six.vercel.app/",
+  },
+];
 
 const PILLARS = [
   {
@@ -108,7 +125,7 @@ export function WhiteLabelPitch() {
           </p>
         </Reveal>
         <Reveal className="mt-12">
-          <EditionsSlideshow />
+          <Slideshow slides={EDITIONS} />
         </Reveal>
       </Section>
     </>
