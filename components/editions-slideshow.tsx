@@ -40,7 +40,7 @@ export function EditionsSlideshow() {
 
   return (
     <div
-      className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 sm:aspect-[3/2] lg:aspect-[2/1]"
+      className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-foreground/10 sm:aspect-[3/2] lg:aspect-[2/1]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -65,10 +65,10 @@ export function EditionsSlideshow() {
 
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/10"
+        className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/65 to-transparent"
       />
 
-      <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10">
+      <div className="absolute inset-x-0 bottom-0 px-6 pb-5 pt-10 sm:px-8 sm:pb-6 sm:pt-14 lg:px-10 lg:pb-7 lg:pt-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={slide.name}
@@ -77,26 +77,30 @@ export function EditionsSlideshow() {
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: -12 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-xs uppercase tracking-[0.2em] text-sky-400">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent">
               {slide.character}
             </p>
-            <h3 className="mt-2 text-[2rem] font-light leading-[1.1] tracking-tight text-white md:text-5xl">
+            <h3 className="mt-2 text-[2rem] font-light leading-[1.1] tracking-tight text-foreground md:text-5xl">
               {slide.name}
             </h3>
-            <p className="mt-3 max-w-lg text-base text-white/80">{slide.body}</p>
-            <a
-              href={slide.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-sky-400 transition-colors hover:text-sky-300"
-            >
-              Ver {slide.name}
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
+            <p className="mt-3 max-w-lg text-base text-foreground/80">
+              {slide.body}
+            </p>
+            <div className="mt-5 flex justify-end">
+              <a
+                href={slide.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.15em] text-accent transition-colors hover:text-accent-hover"
+              >
+                Ver {slide.name}
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </motion.div>
         </AnimatePresence>
 
-        <div className="mt-6 flex gap-2">
+        <div className="mt-6 flex justify-end gap-2">
           {SLIDES.map((s, n) => (
             <button
               key={s.name}
@@ -106,8 +110,8 @@ export function EditionsSlideshow() {
               aria-current={n === index}
               className={`h-1.5 rounded-full transition-all ${
                 n === index
-                  ? "w-8 bg-sky-400"
-                  : "w-4 bg-white/25 hover:bg-white/40"
+                  ? "w-8 bg-accent"
+                  : "w-4 bg-foreground/25 hover:bg-foreground/40"
               }`}
             />
           ))}
