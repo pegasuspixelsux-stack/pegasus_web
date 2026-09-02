@@ -8,8 +8,11 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export const dynamicParams = false;
 
+// `inmobiliarias` has its own dedicated landing at app/inmobiliarias/page.tsx.
 export function generateStaticParams() {
-  return SECTORS.map((sector) => ({ slug: sector.slug }));
+  return SECTORS.filter((sector) => sector.slug !== "inmobiliarias").map(
+    (sector) => ({ slug: sector.slug }),
+  );
 }
 
 export async function generateMetadata({

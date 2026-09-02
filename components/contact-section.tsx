@@ -2,24 +2,11 @@
 
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import {
-  ArrowRight,
-  Check,
-  Clock,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-} from "lucide-react";
-import { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
+import { ArrowRight, Check } from "lucide-react";
+import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
+import { ContactDetails } from "@/components/contact-details";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
-
-const EMAIL = "apps@pegasuspixels.com";
-const PHONES = [
-  { display: "+1 301 257 4500", href: "+13012574500", region: "EE. UU." },
-  { display: "+598 91 028 324", href: "+59891028324", region: "Uruguay" },
-];
 
 const inputClass =
   "w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2.5 text-white placeholder:text-white/30 focus:border-white/40 focus:outline-none";
@@ -76,53 +63,7 @@ export function ContactSection() {
             Escríbanos y le responderemos.
           </p>
 
-          <ul className="mt-10 max-w-md space-y-5">
-            <li className="flex items-start gap-3">
-              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-              <a
-                href={`mailto:${EMAIL}`}
-                className="text-muted transition-colors hover:text-white"
-              >
-                {EMAIL}
-              </a>
-            </li>
-            {PHONES.map((phone) => (
-              <li key={phone.href} className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-                <a
-                  href={`tel:${phone.href}`}
-                  className="text-muted transition-colors hover:text-white"
-                >
-                  {phone.display}
-                  <span className="text-muted/60"> · {phone.region}</span>
-                </a>
-              </li>
-            ))}
-            <li className="flex items-start gap-3">
-              <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-              <a
-                href={buildWhatsAppUrl({ vertical: "general" })}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted transition-colors hover:text-white"
-              >
-                Chat directo por WhatsApp
-              </a>
-            </li>
-            <li className="flex items-start gap-3">
-              <Clock className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-              <span className="text-muted">
-                Lunes a viernes, 09:00 a 19:00 (UYT)
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-              <span className="text-muted">
-                Sede en Punta del Este, Uruguay · Oferta global (EE. UU.,
-                Europa y Latinoamérica)
-              </span>
-            </li>
-          </ul>
+          <ContactDetails className="mt-10" />
         </div>
 
         <form
