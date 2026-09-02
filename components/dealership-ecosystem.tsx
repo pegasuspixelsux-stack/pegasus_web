@@ -153,7 +153,7 @@ export function DealershipEcosystem() {
             href={CTA_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-medium text-on-accent transition duration-150 ease-out hover:bg-accent-hover active:scale-[0.98] motion-reduce:active:scale-100"
+            className="inline-flex items-center gap-2 rounded-none bg-accent px-7 py-4 text-base font-medium text-on-accent transition duration-150 ease-out hover:bg-accent-hover active:scale-[0.98] motion-reduce:active:scale-100"
           >
             Solicitar propuesta para tu concesionaria
             <ArrowRight className="h-4 w-4" />
