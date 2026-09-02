@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { VerticalLanding } from "@/components/vertical-landing";
 import { VERTICAL_LANDINGS } from "@/lib/verticals";
 
-const data = VERTICAL_LANDINGS.inmobiliarias;
+const data = VERTICAL_LANDINGS.concesionarias;
 
 export const metadata: Metadata = {
   title: data.metaTitle,

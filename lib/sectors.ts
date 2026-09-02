@@ -100,7 +100,3 @@ export const SECTORS: Sector[] = [
     ],
   },
 ];
-
-export function getSectorBySlug(slug: string): Sector | undefined {
-  return SECTORS.find((sector) => sector.slug === slug);
-}
