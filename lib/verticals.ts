@@ -8,6 +8,22 @@ export type BenefitIcon =
   | "workflow"
   | "sliders";
 
+/** "Agente" 24/7 concierge section, one per vertical landing page. */
+export type AgenteData = {
+  eyebrow: string;
+  h2: string;
+  intro: string;
+  advantages: {
+    /** target | clock | messages | sparkles | heart | gauge */
+    icon: string;
+    title: string;
+    body: string;
+  }[];
+  /** Public path to the funnel screenshot; omit to show an upload stub. */
+  screenshot?: string;
+  screenshotHint?: string;
+};
+
 export type VerticalLandingData = {
   slug: string;
   metaTitle: string;
@@ -41,6 +57,7 @@ export type VerticalLandingData = {
     /** `vertical` label passed to buildWhatsAppUrl. */
     whatsappVertical: string;
   };
+  agente: AgenteData;
 };
 
 export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
@@ -105,6 +122,35 @@ export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
       body: "Coordiná una llamada directa para implementar la infraestructura que tu negocio necesita para cerrar más operaciones.",
       button: "Hablar por WhatsApp",
       whatsappVertical: "Desarrollos Inmobiliarios",
+    },
+    agente: {
+      eyebrow: "Agente · Concierge 24/7",
+      h2: "El concierge que califica cada consulta, a cualquier hora",
+      intro:
+        "Agente es un embudo de calificación interactivo y multi-paso. En lugar de un formulario que nadie completa, conduce a cada visitante por preguntas cortas —intención, presupuesto, zona, plazo— y entrega un lead calificado a tu equipo de ventas.",
+      advantages: [
+        {
+          icon: "target",
+          title: "Calificación de precisión",
+          body: "Pre-califica cada consulta por intención, presupuesto, zona y plazo, y vuelca datos limpios directo al pipeline de ventas.",
+        },
+        {
+          icon: "clock",
+          title: "Disponibilidad global 24/7",
+          body: "Capta al inversor extranjero y al comprador de alto patrimonio en cualquier huso horario, sin esperas ni horarios de oficina.",
+        },
+        {
+          icon: "messages",
+          title: "Fin de los formularios estáticos",
+          body: "Reemplaza el formulario que nadie completa por una conversación guiada que retiene al visitante en lugar de dejarlo ir.",
+        },
+        {
+          icon: "sparkles",
+          title: "Diferenciación de mercado",
+          body: "Un concierge digital a medida distingue a tu inmobiliaria de la competencia atada a los portales genéricos.",
+        },
+      ],
+      screenshot: "/sectores/agente_1.png",
     },
   },
 
@@ -171,6 +217,35 @@ export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
       button: "Hablar por WhatsApp",
       whatsappVertical: "Gastronomía",
     },
+    agente: {
+      eyebrow: "Agente · Asistente de menú y pedidos 24/7",
+      h2: "El asistente de menú y pedidos que eleva la experiencia del comensal",
+      intro:
+        "Agente interactúa con cada visitante para descubrir sus antojos, presentar el menú disponible y guiarlo paso a paso —reserva, pedido anticipado o delivery— convirtiendo la visita a la web en una interacción memorable y automatizada.",
+      advantages: [
+        {
+          icon: "messages",
+          title: "Guía interactiva del menú en tiempo real",
+          body: "Interactúa directamente con los comensales para descubrir sus antojos, presentarles las opciones disponibles del menú y ayudarlos a elegir paso a paso qué van a comer o beber.",
+        },
+        {
+          icon: "gauge",
+          title: "Atención y toma de decisiones sin esperas",
+          body: "Ideal para captar reservas, coordinar pedidos anticipados o guiar a clientes indecisos a cualquier hora, optimizando la rotación y el flujo de atención del salón o del delivery.",
+        },
+        {
+          icon: "heart",
+          title: "Personalización y captura de preferencias",
+          body: "Registra los gustos, restricciones alimentarias y selecciones del usuario, permitiendo a la marca conocer mejor a su clientela y hacer un seguimiento comercial o de fidelización efectivo.",
+        },
+        {
+          icon: "sparkles",
+          title: "Ventaja competitiva única",
+          body: "Diferencia a tu restaurante o polo gastronómico con una experiencia de bienvenida digital sofisticada que las webs tradicionales del sector no pueden igualar.",
+        },
+      ],
+      screenshotHint: "public/sectores/agente_gastronomia.png",
+    },
   },
 
   concesionarias: {
@@ -234,6 +309,35 @@ export const VERTICAL_LANDINGS: Record<string, VerticalLandingData> = {
       body: "Coordiná una llamada directa para implementar la infraestructura digital que tu concesionaria necesita para diferenciarse y cerrar más operaciones.",
       button: "Hablar por WhatsApp",
       whatsappVertical: "Concesionarias",
+    },
+    agente: {
+      eyebrow: "Agente · Concierge comercial 24/7",
+      h2: "El concierge comercial 24/7 que revoluciona el sector automotor",
+      intro:
+        "Agente guía al comprador por un embudo inteligente —qué vehículo busca, qué presupuesto maneja, si quiere agendar una visita al salón o entregar un usado en permuta— y deja un lead altamente calificado en manos de tu equipo comercial.",
+      advantages: [
+        {
+          icon: "target",
+          title: "Conversión instantánea y calificación precisa",
+          body: "Consulta en tiempo real modelo, presupuesto, visita al salón y permuta (trade-in), y entrega datos estructurados y accionables directo a ventas.",
+        },
+        {
+          icon: "clock",
+          title: "Disponibilidad global y nocturna",
+          body: "El comprador de alta gama investiga y decide fuera del horario comercial. Agente atiende 24/7 y en cualquier huso horario, sin perder una sola consulta.",
+        },
+        {
+          icon: "messages",
+          title: "Fin de los formularios estáticos",
+          body: "Reemplaza los formularios de contacto por una experiencia conversacional que captura la curiosidad del visitante y la transforma en datos listos para cerrar la venta.",
+        },
+        {
+          icon: "sparkles",
+          title: "Diferenciación absoluta frente a la competencia",
+          body: "Posiciona a tu concesionaria a la vanguardia con un trato digital personalizado y de alto nivel que las webs tradicionales del sector no pueden igualar.",
+        },
+      ],
+      screenshotHint: "public/sectores/agente_concesionarias.png",
     },
   },
 };

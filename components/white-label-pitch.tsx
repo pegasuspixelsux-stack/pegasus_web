@@ -1,5 +1,4 @@
 import { ConciergeBell, KanbanSquare, Sparkles } from "lucide-react";
-import { AgenteSection } from "@/components/agente-section";
 import { Eyebrow } from "@/components/eyebrow";
 import { FeatureCard } from "@/components/feature-card";
 import { ImagePlaceholder } from "@/components/image-placeholder";
@@ -46,9 +45,9 @@ const EDITIONS = [
 
 /**
  * White-label real-estate platform pitch, appended to the Desarrollos
- * Inmobiliarios landing page. Same Pegasus Pixels styling as the rest of
- * the site. Closes with the Agente concierge section; the page's own CTA
- * follows it, directly above the footer.
+ * Inmobiliarios landing page (same Pegasus Pixels styling as the rest of
+ * the site). Rendered as `children` of VerticalLanding, before the shared
+ * Agente section and the closing CTA.
  */
 export function WhiteLabelPitch() {
   return (
@@ -148,9 +147,6 @@ export function WhiteLabelPitch() {
           ))}
         </div>
       </Section>
-
-      {/* Agente — 24/7 concierge funnel */}
-      <AgenteSection />
     </>
   );
 }

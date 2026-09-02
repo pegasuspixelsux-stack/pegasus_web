@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import type { BenefitIcon, VerticalLandingData } from "@/lib/verticals";
+import { AgenteSection } from "@/components/agente-section";
 import { ContactDetails } from "@/components/contact-details";
 import { Eyebrow } from "@/components/eyebrow";
 import { FeatureCard } from "@/components/feature-card";
@@ -165,6 +166,9 @@ export function VerticalLanding({
       </Section>
 
       {children}
+
+      {/* Agente — 24/7 concierge, one per vertical */}
+      <AgenteSection {...data.agente} />
 
       {/* E — CTA (kept last, directly above the footer) */}
       <section className="border-b border-white/10 bg-background px-6 py-24 lg:px-24 lg:py-32">
