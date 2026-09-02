@@ -31,13 +31,23 @@ export function ApproachSection() {
           </h2>
         </div>
 
-        <ul className="space-y-3">
-          {POINTS.map((point) => (
-            <li key={point} className="text-base leading-relaxed text-white/70">
-              {point}
-            </li>
-          ))}
-        </ul>
+        <div className="space-y-6">
+          <p className="text-base leading-relaxed text-white/60">
+            Creamos infraestructura digital enfocada en resultados comerciales
+            directos, optimizada para empresas consolidadas que exigen
+            rendimiento y efectividad.
+          </p>
+          <ul className="space-y-3 border-t border-white/15 pt-6">
+            {POINTS.map((point) => (
+              <li
+                key={point}
+                className="text-base leading-relaxed text-white/70"
+              >
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
       </motion.div>
     </section>
   );
