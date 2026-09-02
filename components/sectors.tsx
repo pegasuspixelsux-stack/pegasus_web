@@ -21,7 +21,7 @@ export function Sectors() {
           transition={{ duration: 0.6, ease: EASE }}
           className="mx-auto max-w-[1440px] px-6 pb-16 pt-24 lg:px-24"
         >
-          <h2 className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-sky-600">
+          <h2 className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-black/50">
             <Sparkle className="h-3.5 w-3.5 fill-current" />
             Verticales Principales
           </h2>
