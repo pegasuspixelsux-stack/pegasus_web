@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { MessageSquare, X, ArrowRight } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
@@ -77,6 +77,13 @@ export function ChatWidget() {
 
   const step = !industry ? 1 : !pain ? 2 : !timeline ? 3 : 4;
   const canSend = name.trim() !== "" && phone.trim() !== "";
+
+  // Let other sections (e.g. the Agente pitch) pop the widget open.
+  useEffect(() => {
+    const openAgente = () => setOpen(true);
+    window.addEventListener("pegasus:open-agente", openAgente);
+    return () => window.removeEventListener("pegasus:open-agente", openAgente);
+  }, []);
 
   const send = () => {
     if (!canSend) return;

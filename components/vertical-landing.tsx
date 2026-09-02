@@ -164,7 +164,9 @@ export function VerticalLanding({
         </div>
       </Section>
 
-      {/* E — CTA */}
+      {children}
+
+      {/* E — CTA (kept last, directly above the footer) */}
       <section className="border-b border-white/10 bg-background px-6 py-24 lg:px-24 lg:py-32">
         <Reveal className="mx-auto grid max-w-[1440px] grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
@@ -186,8 +188,6 @@ export function VerticalLanding({
           </div>
         </Reveal>
       </section>
-
-      {children}
     </main>
   );
 }

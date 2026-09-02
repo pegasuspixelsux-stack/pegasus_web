@@ -1,5 +1,5 @@
-import { ArrowRight, ConciergeBell, KanbanSquare, Sparkles } from "lucide-react";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { ConciergeBell, KanbanSquare, Sparkles } from "lucide-react";
+import { AgenteSection } from "@/components/agente-section";
 import { Eyebrow } from "@/components/eyebrow";
 import { FeatureCard } from "@/components/feature-card";
 import { ImagePlaceholder } from "@/components/image-placeholder";
@@ -44,14 +44,11 @@ const EDITIONS = [
   },
 ];
 
-const DEMO_HREF = buildWhatsAppUrl({
-  vertical: "Plataforma white-label para inmobiliarias",
-});
-
 /**
  * White-label real-estate platform pitch, appended to the Desarrollos
  * Inmobiliarios landing page. Same Pegasus Pixels styling as the rest of
- * the site; images are left as upload placeholders.
+ * the site. Closes with the Agente concierge section; the page's own CTA
+ * follows it, directly above the footer.
  */
 export function WhiteLabelPitch() {
   return (
@@ -152,29 +149,8 @@ export function WhiteLabelPitch() {
         </div>
       </Section>
 
-      {/* Demo CTA */}
-      <section className="border-b border-white/10 bg-surface px-6 py-24 lg:px-24 lg:py-32">
-        <Reveal className="mx-auto max-w-3xl">
-          <Eyebrow>Solicitar acceso</Eyebrow>
-          <h2 className={`mt-5 ${H2}`}>
-            Pedí una demo de la plataforma para tu inmobiliaria
-          </h2>
-          <p className="mt-5 text-base text-muted">
-            Para agencias y desarrolladores que quieren dejar de alquilar
-            visibilidad en portales y operar sobre infraestructura propia.
-            Coordinamos una demo guiada y definimos el plan de implementación.
-          </p>
-          <a
-            href={DEMO_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-sky-400 px-7 py-4 text-base font-medium text-black transition-colors hover:bg-sky-300"
-          >
-            Solicitar una demo
-            <ArrowRight className="h-4 w-4" />
-          </a>
-        </Reveal>
-      </section>
+      {/* Agente — 24/7 concierge funnel */}
+      <AgenteSection />
     </>
   );
 }
