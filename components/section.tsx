@@ -16,7 +16,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`border-b border-white/10 ${
+      className={`border-b border-foreground/10 ${
         tone === "b" ? "bg-surface" : "bg-background"
       } ${className ?? ""}`}
     >

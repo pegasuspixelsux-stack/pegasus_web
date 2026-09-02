@@ -59,7 +59,7 @@ export function NavSearch({
 
   return (
     <div className="relative">
-      <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-3.5 py-2 transition-colors focus-within:border-white/40">
+      <div className="flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/[0.03] px-3.5 py-2 transition-colors focus-within:border-foreground/40">
         <Search className="h-4 w-4 shrink-0 text-muted" strokeWidth={1.5} />
         <input
           type="text"
@@ -90,7 +90,7 @@ export function NavSearch({
 
       {open && results.length > 0 && (
         <ul
-          className="absolute left-0 right-0 z-50 mt-2 overflow-hidden rounded-xl border border-white/10 bg-surface-card py-1 shadow-2xl"
+          className="absolute left-0 right-0 z-50 mt-2 overflow-hidden rounded-xl border border-foreground/10 bg-surface-card py-1 shadow-2xl"
           onMouseDown={(event) => {
             event.preventDefault();
             if (blurTimer.current) clearTimeout(blurTimer.current);
@@ -101,7 +101,7 @@ export function NavSearch({
               <Link
                 href={target.href}
                 onClick={reset}
-                className="block px-4 py-2 text-sm text-muted transition-colors hover:bg-white/5 hover:text-white"
+                className="block px-4 py-2 text-sm text-muted transition-colors hover:bg-foreground/5 hover:text-foreground"
               >
                 {target.label}
               </Link>

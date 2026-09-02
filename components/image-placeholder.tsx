@@ -25,7 +25,7 @@ export function ImagePlaceholder({
   return (
     <div
       className={`relative ${aspect} overflow-hidden rounded-2xl bg-surface-card ${
-        src ? "border border-white/10" : "border border-dashed border-white/20"
+        src ? "border border-foreground/10" : "border border-dashed border-foreground/20"
       } ${className ?? ""}`}
     >
       {src ? (

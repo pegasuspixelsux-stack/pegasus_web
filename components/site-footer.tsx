@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SECTORS } from "@/lib/sectors";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 // TODO: confirm the Instagram / LinkedIn handles.
 const SOCIAL_LINKS = [
@@ -45,11 +46,11 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 px-6 py-16 text-sm text-muted lg:px-24">
+    <footer className="border-t border-foreground/10 px-6 py-16 text-sm text-muted lg:px-24">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-            Pegasus <span className="text-sky-400">Pixels</span>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-foreground/80">
+            Pegasus <span className="text-accent">Pixels</span>
           </p>
           <p>
             Arquitectura de aplicaciones con estándares globales, desde Punta
@@ -62,13 +63,13 @@ export function SiteFooter() {
         </div>
 
         <nav className="space-y-3" aria-label="Sectores">
-          <p className="uppercase tracking-[0.2em] text-sky-400">Sectores</p>
+          <p className="uppercase tracking-[0.2em] text-accent">Sectores</p>
           <ul className="space-y-2">
             {SECTOR_LINKS.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="transition-colors hover:text-white"
+                  className="transition-colors hover:text-foreground"
                 >
                   {link.label}
                 </Link>
@@ -78,7 +79,7 @@ export function SiteFooter() {
         </nav>
 
         <div className="space-y-3">
-          <p className="uppercase tracking-[0.2em] text-sky-400">Tecnología</p>
+          <p className="uppercase tracking-[0.2em] text-accent">Tecnología</p>
           <ul className="space-y-2">
             {TECH_ITEMS.map((item) => (
               <li key={item}>{item}</li>
@@ -87,14 +88,14 @@ export function SiteFooter() {
         </div>
 
         <div className="space-y-3">
-          <p className="uppercase tracking-[0.2em] text-sky-400">Contacto</p>
+          <p className="uppercase tracking-[0.2em] text-accent">Contacto</p>
           <ul className="space-y-2">
             <li>
               <a
                 href={buildWhatsAppUrl({ vertical: "general" })}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-white"
+                className="transition-colors hover:text-foreground"
               >
                 Canal directo de WhatsApp
               </a>
@@ -104,8 +105,11 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto mt-14 flex max-w-[1440px] flex-col gap-6 border-t border-white/10 pt-8 text-muted/70 sm:flex-row sm:items-center sm:justify-between">
-        <p>&copy; {year} Pegasus Pixels.</p>
+      <div className="mx-auto mt-14 flex max-w-[1440px] flex-col gap-6 border-t border-foreground/10 pt-8 text-muted/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-4">
+          <p>&copy; {year} Pegasus Pixels.</p>
+          <ThemeToggle className="h-8 w-8" />
+        </div>
 
         <nav className="flex gap-4" aria-label="Redes sociales">
           {SOCIAL_LINKS.map(({ label, href, path }) => (
@@ -115,7 +119,7 @@ export function SiteFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-muted transition-colors hover:text-white"
+              className="text-muted transition-colors hover:text-foreground"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -134,7 +138,7 @@ export function SiteFooter() {
             <Link
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-white"
+              className="transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>

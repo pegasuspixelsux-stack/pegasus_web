@@ -15,14 +15,14 @@ export function Eyebrow({
 }) {
   return (
     <p
-      className={`flex items-center gap-2.5 text-xs uppercase tracking-[0.2em] text-sky-400 ${
+      className={`flex items-center gap-2.5 text-xs uppercase tracking-[0.2em] text-accent ${
         className ?? ""
       }`}
     >
       {icon === "dot" ? (
         <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75 motion-reduce:animate-none" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-400" />
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75 motion-reduce:animate-none" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
         </span>
       ) : (
         <Sparkle className="h-3.5 w-3.5 fill-current" />

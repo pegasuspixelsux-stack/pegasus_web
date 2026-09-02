@@ -1,24 +1,20 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   Pegasus Pixels - dark luxury theme (single locked theme, no light mode)
+   Pegasus Pixels - theme tokens (dark default + optional light mode)
 
    Brand guide
    -----------
-   Color      section tone A  #0A0A0A   section tone B  #0F0F0F
-              raised card     #161616
-              text  #F3F3F3   text secondary  #A0A0A0
-              accent  sky-400 (#38bdf8)
-   Sections alternate A / B for a subtle step between bands; the hero
-   opens on the darkest tone (A).
-   Type       locked to a 16px base grid
-              h1  64px / 1.1   (16 x 4)
-              h2  48px / 1.2   (16 x 3)
-              h3  24px / 1.5   (16 x 1.5)
-              body / small  16px   (16 x 1)   body 1.6 · small 1.5
+   Dark   bg #0A0A0A · surface #0F0F0F · card #161616
+          text #F3F3F3 · secondary #A0A0A0 · accent sky-400 (#38BDF8)
+   Light  bg #FFFFFF · surface #F4F4F6 · card #FFFFFF
+          text #0A0A0A · secondary #57575C · accent blue-600 (#2563EB)
+   Sections alternate A / B for a subtle step between bands.
+   Type   locked to a 16px base grid — h1 64/1.1 · h2 48/1.2 · h3 24/1.5 · body 16/1.6
    ========================================================================== */
 
 :root {
+  /* Dark — the default theme. */
   --background: #0a0a0a;
   --surface: #0f0f0f;
   --surface-raised: #121212;
@@ -26,9 +22,25 @@
   --foreground: #f3f3f3;
   --muted: #a0a0a0;
   --border: rgba(255, 255, 255, 0.1);
+  --accent: #38bdf8; /* sky-400 */
+  --accent-hover: #7dd3fc; /* sky-300 */
+  --on-accent: #000000;
 
   /* Body copy sits on the 16px base at a 1.6 rhythm. */
   --text-base--line-height: 1.6;
+}
+
+:root[data-theme="light"] {
+  --background: #ffffff;
+  --surface: #f4f4f6;
+  --surface-raised: #f0f0f2;
+  --surface-card: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #57575c;
+  --border: rgba(0, 0, 0, 0.12);
+  --accent: #2563eb; /* blue-600 — vibrant on white */
+  --accent-hover: #1d4ed8; /* blue-700 */
+  --on-accent: #ffffff;
 }
 
 @theme inline {
@@ -38,6 +50,9 @@
   --color-surface-card: var(--surface-card);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
@@ -62,6 +77,10 @@ html {
   text-size-adjust: 100%;
 }
 
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -74,6 +93,9 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* Even out line lengths: balance display type, tidy paragraph rag. */
@@ -90,14 +112,20 @@ p {
 }
 
 ::selection {
-  background: #ffffff;
-  color: #000000;
+  background: var(--foreground);
+  color: var(--background);
 }
 
 *:focus-visible {
-  outline: 2px solid rgba(243, 243, 243, 0.65);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 2px;
+}
+
+/* Grain reads on dark via screen blend; flip to multiply on light. */
+html[data-theme="light"] .noise-overlay {
+  mix-blend-mode: multiply;
+  opacity: 0.05;
 }
 
 /* The 16px grid is the same on every viewport — no mobile inflation. Only the

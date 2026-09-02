@@ -55,7 +55,7 @@ export function VerticalLanding({
       <Section tone="a" id="top">
         <Link
           href="/#sectores"
-          className="mb-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted transition-colors hover:text-white"
+          className="mb-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           Volver a sectores
@@ -69,11 +69,11 @@ export function VerticalLanding({
           </div>
 
           {/* Platform mockup */}
-          <div className="relative rounded-2xl border border-white/10 bg-surface-card p-3 shadow-2xl">
+          <div className="relative rounded-2xl border border-foreground/10 bg-surface-card p-3 shadow-2xl">
             <div className="flex items-center gap-1.5 px-2 pb-3 pt-1">
-              <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
               <Image
@@ -91,7 +91,7 @@ export function VerticalLanding({
                 <p className="text-sm font-medium text-white">
                   {mockup.cardTitle}
                 </p>
-                <p className="text-xs text-muted">{mockup.cardSubtitle}</p>
+                <p className="text-xs text-white/70">{mockup.cardSubtitle}</p>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@ export function VerticalLanding({
         </Reveal>
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
           <Reveal className="h-full">
-            <div className="h-full rounded-2xl border border-white/10 bg-surface-card p-6 lg:p-8">
+            <div className="h-full rounded-2xl border border-foreground/10 bg-surface-card p-6 lg:p-8">
               <p className="text-xs uppercase tracking-[0.2em] text-muted">
                 {comparison.before.label}
               </p>
@@ -149,8 +149,8 @@ export function VerticalLanding({
             </div>
           </Reveal>
           <Reveal delay={0.08} className="h-full">
-            <div className="h-full rounded-2xl border border-sky-400/40 bg-sky-400/[0.06] p-6 lg:p-8">
-              <p className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-sky-400">
+            <div className="h-full rounded-2xl border border-accent/40 bg-accent/[0.06] p-6 lg:p-8">
+              <p className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-accent">
                 <Check className="h-3.5 w-3.5" />
                 {comparison.after.label}
               </p>
@@ -171,7 +171,7 @@ export function VerticalLanding({
       <AgenteSection {...data.agente} />
 
       {/* E — CTA (kept last, directly above the footer) */}
-      <section className="border-b border-white/10 bg-background px-6 py-24 lg:px-24 lg:py-32">
+      <section className="border-b border-foreground/10 bg-background px-6 py-24 lg:px-24 lg:py-32">
         <Reveal className="mx-auto grid max-w-[1440px] grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
           <div>
             <Eyebrow>{cta.eyebrow}</Eyebrow>
@@ -181,7 +181,7 @@ export function VerticalLanding({
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-sky-400 px-7 py-4 text-base font-medium text-black transition duration-150 ease-out hover:bg-sky-300 active:scale-[0.98] motion-reduce:active:scale-100"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-medium text-on-accent transition duration-150 ease-out hover:bg-accent-hover active:scale-[0.98] motion-reduce:active:scale-100"
             >
               {cta.button}
               <ArrowRight className="h-4 w-4" />

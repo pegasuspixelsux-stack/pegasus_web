@@ -9,7 +9,7 @@ import { ContactDetails } from "@/components/contact-details";
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const inputClass =
-  "w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2.5 text-white placeholder:text-white/30 focus:border-white/40 focus:outline-none";
+  "w-full rounded-lg border border-foreground/10 bg-foreground/[0.05] px-3 py-2.5 text-foreground placeholder:text-foreground/30 focus:border-foreground/40 focus:outline-none";
 
 export function ContactSection() {
   const reduce = useReducedMotion();
@@ -44,7 +44,7 @@ export function ContactSection() {
   return (
     <section
       id="contacto"
-      className="scroll-mt-16 border-t border-white/10 bg-background px-6 py-24 lg:px-24 lg:py-32"
+      className="scroll-mt-16 border-t border-foreground/10 bg-background px-6 py-24 lg:px-24 lg:py-32"
     >
       <motion.div
         initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -68,11 +68,11 @@ export function ContactSection() {
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 rounded-2xl border border-white/10 bg-surface-card p-2.5"
+          className="space-y-4 rounded-2xl border border-foreground/10 bg-surface-card p-2.5"
         >
           {sent ? (
             <div className="flex flex-col items-center gap-4 py-10 text-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-400/15 text-sky-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/15 text-accent">
                 <Check className="h-6 w-6" />
               </div>
               <p className="text-muted">
@@ -81,7 +81,7 @@ export function ContactSection() {
               <button
                 type="button"
                 onClick={() => setSent(false)}
-                className="text-xs uppercase tracking-wider text-muted transition-colors hover:text-white"
+                className="text-xs uppercase tracking-wider text-muted transition-colors hover:text-foreground"
               >
                 Enviar otro mensaje
               </button>
@@ -149,7 +149,7 @@ export function ContactSection() {
               <button
                 type="submit"
                 aria-disabled={!canSubmit}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-sky-400 py-4 text-base font-medium text-black transition duration-150 ease-out hover:bg-sky-300 active:scale-[0.98] motion-reduce:active:scale-100"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-accent py-4 text-base font-medium text-on-accent transition duration-150 ease-out hover:bg-accent-hover active:scale-[0.98] motion-reduce:active:scale-100"
               >
                 Enviar consulta
                 <ArrowRight className="h-4 w-4" />

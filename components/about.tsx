@@ -11,7 +11,7 @@ export function About() {
   return (
     <section
       id="nosotros"
-      className="flex min-h-[50vh] items-center border-b border-white/10 bg-surface px-6 py-28 lg:px-24 lg:py-32"
+      className="flex min-h-[50vh] items-center border-b border-foreground/10 bg-surface px-6 py-28 lg:px-24 lg:py-32"
     >
       <motion.div
         initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -20,7 +20,7 @@ export function About() {
         transition={{ duration: 0.6, ease: EASE }}
         className="mx-auto max-w-3xl space-y-6 text-left sm:text-center"
       >
-        <h2 className="flex items-center justify-start gap-2 text-xs uppercase tracking-[0.2em] text-sky-400 sm:justify-center">
+        <h2 className="flex items-center justify-start gap-2 text-xs uppercase tracking-[0.2em] text-accent sm:justify-center">
           <Sparkle className="h-3.5 w-3.5 fill-current" />
           Quiénes Somos
         </h2>

@@ -28,12 +28,12 @@ const TIMELINES: { label: string; tag: string }[] = [
 ];
 
 function Bot({ children }: { children: React.ReactNode }) {
-  return <p className="rounded-xl bg-white/5 p-3 text-white/80">{children}</p>;
+  return <p className="rounded-xl bg-foreground/5 p-3 text-foreground/80">{children}</p>;
 }
 
 function Me({ children }: { children: React.ReactNode }) {
   return (
-    <p className="ml-6 rounded-xl bg-sky-400/15 p-3 text-right text-sky-100">
+    <p className="ml-6 rounded-xl bg-accent/15 p-3 text-right text-accent">
       {children}
     </p>
   );
@@ -53,7 +53,7 @@ function Options({
           key={item}
           type="button"
           onClick={() => onSelect(item)}
-          className="rounded-lg bg-white/5 px-3 py-2 text-left leading-snug text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+          className="rounded-lg bg-foreground/5 px-3 py-2 text-left leading-snug text-foreground/80 transition-colors hover:bg-foreground/10 hover:text-foreground"
         >
           {item}
         </button>
@@ -115,17 +115,17 @@ export function ChatWidget() {
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.25, ease: EASE }}
-            className="absolute bottom-16 right-0 flex w-[340px] origin-bottom-right flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#161616] shadow-2xl"
+            className="absolute bottom-16 right-0 flex w-[340px] origin-bottom-right flex-col overflow-hidden rounded-2xl border border-foreground/10 bg-surface-card shadow-2xl"
           >
-            <div className="flex items-center justify-between border-b border-white/10 bg-[#1e1e1e] px-4 py-3">
-              <span className="text-xs font-medium uppercase tracking-wider text-white/80">
+            <div className="flex items-center justify-between border-b border-foreground/10 bg-surface px-4 py-3">
+              <span className="text-xs font-medium uppercase tracking-wider text-foreground/80">
                 Agente Pegasus Pixels
               </span>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Cerrar Agente"
-                className="text-white/60 transition-colors hover:text-white"
+                className="text-foreground/60 transition-colors hover:text-foreground"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -182,7 +182,7 @@ export function ChatWidget() {
                     placeholder="Nombre"
                     value={name}
                     onChange={(event) => setName(event.target.value)}
-                    className="w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-white placeholder-white/30 focus:border-white/40 focus:outline-none"
+                    className="w-full rounded-lg border border-foreground/10 bg-foreground/[0.05] px-3 py-2 text-foreground placeholder-foreground/30 focus:border-foreground/40 focus:outline-none"
                   />
                   <label htmlFor={`${contactId}-phone`} className="sr-only">
                     Teléfono o WhatsApp
@@ -195,7 +195,7 @@ export function ChatWidget() {
                     placeholder="Teléfono / WhatsApp"
                     value={phone}
                     onChange={(event) => setPhone(event.target.value)}
-                    className="w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-white placeholder-white/30 focus:border-white/40 focus:outline-none"
+                    className="w-full rounded-lg border border-foreground/10 bg-foreground/[0.05] px-3 py-2 text-foreground placeholder-foreground/30 focus:border-foreground/40 focus:outline-none"
                   />
                   <label htmlFor={`${contactId}-email`} className="sr-only">
                     Email (opcional)
@@ -210,13 +210,13 @@ export function ChatWidget() {
                     onKeyDown={(event) => {
                       if (event.key === "Enter") send();
                     }}
-                    className="w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-white placeholder-white/30 focus:border-white/40 focus:outline-none"
+                    className="w-full rounded-lg border border-foreground/10 bg-foreground/[0.05] px-3 py-2 text-foreground placeholder-foreground/30 focus:border-foreground/40 focus:outline-none"
                   />
                   <button
                     type="button"
                     onClick={send}
                     disabled={!canSend}
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-white px-3 py-2.5 font-medium text-black transition duration-150 ease-out hover:bg-white/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 motion-reduce:active:scale-100"
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-foreground px-3 py-2.5 font-medium text-background transition duration-150 ease-out hover:opacity-90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 motion-reduce:active:scale-100"
                   >
                     Conectar con un especialista
                     <ArrowRight className="h-4 w-4" />
@@ -236,7 +236,7 @@ export function ChatWidget() {
         aria-label={open ? "Cerrar Agente" : "Agente"}
         title="Agente"
         aria-expanded={open}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-400 text-white shadow-lg transition-colors hover:bg-sky-300"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-on-accent shadow-lg transition-colors hover:bg-accent-hover"
       >
         {open ? <X className="h-5 w-5" /> : <MessageSquare className="h-5 w-5" />}
       </motion.button>

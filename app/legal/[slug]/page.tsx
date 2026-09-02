@@ -39,7 +39,7 @@ export default async function LegalPage({
     <main className="mx-auto min-h-[70vh] max-w-3xl px-6 pb-32 pt-40 lg:px-24">
       <Link
         href="/"
-        className="mb-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted transition-colors hover:text-white"
+        className="mb-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted transition-colors hover:text-foreground"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver al inicio
@@ -55,7 +55,7 @@ export default async function LegalPage({
           href={buildWhatsAppUrl({ vertical: "general" })}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sky-400 transition-colors hover:text-sky-300"
+          className="text-accent transition-colors hover:text-accent-hover"
         >
           WhatsApp
         </a>

@@ -16,7 +16,7 @@ export function ApproachSection() {
   return (
     <section
       id="soluciones"
-      className="scroll-mt-16 border-b border-white/10 bg-surface px-6 py-24 lg:px-24 lg:py-32"
+      className="scroll-mt-16 border-b border-foreground/10 bg-surface px-6 py-24 lg:px-24 lg:py-32"
     >
       <motion.div
         initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -26,7 +26,7 @@ export function ApproachSection() {
         className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24"
       >
         <div>
-          <p className="mb-4 text-xs uppercase tracking-[0.2em] text-sky-400">
+          <p className="mb-4 text-xs uppercase tracking-[0.2em] text-accent">
             Enfoque
           </p>
           <h2 className="text-[2rem] font-light leading-[1.2] tracking-tight md:text-h2">
@@ -42,7 +42,7 @@ export function ApproachSection() {
             directos, optimizada para empresas consolidadas que exigen
             rendimiento y efectividad.
           </p>
-          <ul className="space-y-3 border-t border-white/15 pt-6">
+          <ul className="space-y-3 border-t border-foreground/15 pt-6">
             {POINTS.map((point) => (
               <li key={point} className="text-base text-muted">
                 {point}

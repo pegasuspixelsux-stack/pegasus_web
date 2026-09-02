@@ -12,7 +12,7 @@ export function Sectors() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="sectores" className="border-b border-white/10">
+    <section id="sectores" className="border-b border-foreground/10">
       <motion.div
         initial={reduce ? false : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ export function Sectors() {
         transition={{ duration: 0.6, ease: EASE }}
         className="mx-auto max-w-[1440px] px-6 pb-16 pt-24 lg:px-24"
       >
-        <h2 className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-sky-400">
+        <h2 className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-accent">
           <Sparkle className="h-3.5 w-3.5 fill-current" />
           Verticales Principales
         </h2>
@@ -37,7 +37,7 @@ export function Sectors() {
           return (
           <article
             key={sector.id}
-            className="relative border-t border-white/10 bg-background"
+            className="relative border-t border-foreground/10 bg-background"
           >
             <div className="mx-auto w-full max-w-[1440px] px-6 py-20 lg:px-24 lg:py-28">
               <motion.div
@@ -50,12 +50,12 @@ export function Sectors() {
                   <div>
                     <h3 className="flex items-center gap-3 text-h3 font-light tracking-tight">
                       <Icon
-                        className="h-7 w-7 shrink-0 text-sky-400"
+                        className="h-7 w-7 shrink-0 text-accent"
                         strokeWidth={1.5}
                       />
                       {sector.title}
                     </h3>
-                    <p className="mt-4 text-base text-sky-400">
+                    <p className="mt-4 text-base text-accent">
                       {sector.subtitle}
                     </p>
                     {sector.body && (
@@ -66,7 +66,7 @@ export function Sectors() {
                       {sector.samples.map((sample, i) => (
                         <motion.div
                           key={sample.title}
-                          className="rounded-xl border border-white/10 bg-surface-card p-5"
+                          className="rounded-xl border border-foreground/10 bg-surface-card p-5"
                           initial={reduce ? false : { opacity: 0, y: 16 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, amount: 0.4 }}
@@ -76,7 +76,7 @@ export function Sectors() {
                             ease: EASE,
                           }}
                         >
-                          <h4 className="flex items-center gap-1.5 text-base font-medium text-sky-400">
+                          <h4 className="flex items-center gap-1.5 text-base font-medium text-accent">
                             {sample.title}
                             <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
                           </h4>
@@ -88,7 +88,7 @@ export function Sectors() {
                     </div>
                   </div>
 
-                  <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 lg:sticky lg:top-24">
+                  <div className="relative aspect-square overflow-hidden rounded-2xl border border-foreground/10 lg:sticky lg:top-24">
                     <Image
                       src={sector.image}
                       alt=""
@@ -102,7 +102,7 @@ export function Sectors() {
                     <Link
                       href={`/${sector.slug}`}
                       aria-label={`Ver ${sector.title}`}
-                      className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-sky-400 text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
+                      className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-on-accent shadow-lg transition-transform hover:scale-105 active:scale-95"
                     >
                       <ArrowUpRight className="h-5 w-5" />
                     </Link>
@@ -121,10 +121,10 @@ export function Sectors() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.6, ease: EASE }}
-        className="group flex items-center justify-center gap-3 border-t border-white/10 px-6 py-14 text-center transition-colors hover:bg-white/[0.03] lg:px-24"
+        className="group flex items-center justify-center gap-3 border-t border-foreground/10 px-6 py-14 text-center transition-colors hover:bg-foreground/[0.03] lg:px-24"
       >
-        <Plus className="h-4 w-4 text-white/40 transition-transform duration-300 group-hover:rotate-90 group-hover:text-white" />
-        <span className="text-base text-muted transition-colors group-hover:text-white">
+        <Plus className="h-4 w-4 text-foreground/40 transition-transform duration-300 group-hover:rotate-90 group-hover:text-foreground" />
+        <span className="text-base text-muted transition-colors group-hover:text-foreground">
           ¿Busca algo diferente? Desarrollos a medida para otros sectores
           selectos.
         </span>

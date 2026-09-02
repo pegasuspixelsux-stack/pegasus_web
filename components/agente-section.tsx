@@ -50,13 +50,13 @@ export function AgenteSection({
 
       <div className="mt-12 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal>
-          <ul className="divide-y divide-white/10 border-y border-white/10">
+          <ul className="divide-y divide-white/10 border-y border-foreground/10">
             {advantages.map((adv) => {
               const Icon = ADVANTAGE_ICONS[adv.icon] ?? Sparkles;
               return (
                 <li key={adv.title} className="flex gap-4 py-5">
                   <Icon
-                    className="mt-0.5 h-5 w-5 shrink-0 text-sky-400"
+                    className="mt-0.5 h-5 w-5 shrink-0 text-accent"
                     strokeWidth={1.5}
                   />
                   <div>
@@ -87,7 +87,7 @@ export function AgenteSection({
         <button
           type="button"
           onClick={launch}
-          className="inline-flex items-center gap-2 rounded-full bg-sky-400 px-7 py-4 text-base font-medium text-black transition duration-150 ease-out hover:bg-sky-300 active:scale-[0.98] motion-reduce:active:scale-100"
+          className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-medium text-on-accent transition duration-150 ease-out hover:bg-accent-hover active:scale-[0.98] motion-reduce:active:scale-100"
         >
           Probar Agente ahora
           <ArrowRight className="h-4 w-4" />

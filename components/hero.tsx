@@ -16,7 +16,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100dvh] flex-col overflow-hidden border-b border-white/10 pb-12 pt-28 lg:pt-32"
+      className="relative flex min-h-[100dvh] flex-col overflow-hidden border-b border-foreground/10 pb-12 pt-28 lg:pt-32"
     >
       <div
         aria-hidden
@@ -29,11 +29,11 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="mb-6 flex items-center gap-2.5 text-xs uppercase tracking-[0.2em] text-sky-400"
+            className="mb-6 flex items-center gap-2.5 text-xs uppercase tracking-[0.2em] text-accent"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75 motion-reduce:animate-none" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-400" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75 motion-reduce:animate-none" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
             Estándares globales.
           </motion.p>
@@ -47,7 +47,7 @@ export function Hero() {
                 transition={{ duration: 0.7, delay: 0.1 + i * 0.12, ease: EASE }}
               >
                 {line.map((seg, j) => (
-                  <span key={j} className={seg.accent ? "text-sky-400" : undefined}>
+                  <span key={j} className={seg.accent ? "text-accent" : undefined}>
                     {seg.text}
                   </span>
                 ))}
@@ -68,7 +68,7 @@ export function Hero() {
           </p>
           <a
             href="#sectores"
-            className="flex items-center gap-2 text-white transition-opacity hover:opacity-70"
+            className="flex items-center gap-2 text-foreground transition-opacity hover:opacity-70"
           >
             <span>Explorar sectores</span>
             <motion.span

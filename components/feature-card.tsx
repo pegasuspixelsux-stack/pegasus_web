@@ -14,12 +14,12 @@ export function FeatureCard({
 }) {
   return (
     <div
-      className={`rounded-2xl border border-white/10 bg-surface-card p-6 lg:p-8 ${
+      className={`rounded-2xl border border-foreground/10 bg-surface-card p-6 lg:p-8 ${
         className ?? ""
       }`}
     >
       {Icon ? (
-        <Icon className="h-6 w-6 text-sky-400" strokeWidth={1.5} />
+        <Icon className="h-6 w-6 text-accent" strokeWidth={1.5} />
       ) : null}
       <h3
         className={`text-h3 font-light tracking-tight text-foreground ${
