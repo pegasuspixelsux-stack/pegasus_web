@@ -115,7 +115,7 @@ export function ChatWidget() {
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.25, ease: EASE }}
-            className="absolute bottom-16 right-0 flex w-[340px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#161616] shadow-2xl"
+            className="absolute bottom-16 right-0 flex w-[340px] origin-bottom-right flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#161616] shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-white/10 bg-[#1e1e1e] px-4 py-3">
               <span className="text-xs font-medium uppercase tracking-wider text-white/80">
@@ -216,7 +216,7 @@ export function ChatWidget() {
                     type="button"
                     onClick={send}
                     disabled={!canSend}
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-white px-3 py-2.5 font-medium text-black transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-40"
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-white px-3 py-2.5 font-medium text-black transition duration-150 ease-out hover:bg-white/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 motion-reduce:active:scale-100"
                   >
                     Conectar con un especialista
                     <ArrowRight className="h-4 w-4" />

@@ -149,7 +149,7 @@ export function ContactSection() {
               <button
                 type="submit"
                 aria-disabled={!canSubmit}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-sky-400 py-4 text-base font-medium text-black transition-colors hover:bg-sky-300"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-sky-400 py-4 text-base font-medium text-black transition duration-150 ease-out hover:bg-sky-300 active:scale-[0.98] motion-reduce:active:scale-100"
               >
                 Enviar consulta
                 <ArrowRight className="h-4 w-4" />

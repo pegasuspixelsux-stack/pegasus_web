@@ -48,7 +48,7 @@ export function SiteNav() {
                     {link.label}
                     <ChevronDown className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
                   </Link>
-                  <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 origin-top scale-95 pt-3 opacity-0 transition duration-150 ease-out group-focus-within:visible group-focus-within:scale-100 group-focus-within:opacity-100 group-hover:visible group-hover:scale-100 group-hover:opacity-100 motion-reduce:scale-100">
                     <ul className="min-w-[240px] rounded-xl border border-white/10 bg-surface-card p-1.5 shadow-2xl">
                       {link.menu.map((item) => (
                         <li key={item.href}>
