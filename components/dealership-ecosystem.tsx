@@ -33,10 +33,10 @@ const PILLARS = [
 ];
 
 const FLYERS = [
-  { hint: "public/sectores/flyer-concesionarias-1.png" },
-  { hint: "public/sectores/flyer-concesionarias-2.png" },
-  { hint: "public/sectores/flyer-concesionarias-3.png" },
-  { hint: "public/sectores/flyer-concesionarias-4.png" },
+  { src: "/sectores/m3_1.png", hint: undefined },
+  { src: undefined, hint: "public/sectores/flyer-concesionarias-2.png" },
+  { src: undefined, hint: "public/sectores/flyer-concesionarias-3.png" },
+  { src: "/sectores/m3_2.png", hint: undefined },
 ];
 
 const CTA_HREF = buildWhatsAppUrl({
@@ -136,9 +136,11 @@ export function DealershipEcosystem() {
 
         <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
           {FLYERS.map((flyer, i) => (
-            <Reveal key={flyer.hint} delay={i * 0.06}>
+            <Reveal key={i} delay={i * 0.06}>
               <ImagePlaceholder
-                aspect="aspect-[4/5]"
+                aspect="aspect-square"
+                src={flyer.src}
+                alt={`Flyer de venta ${i + 1}`}
                 label={`Flyer de venta ${i + 1}`}
                 hint={flyer.hint}
               />
