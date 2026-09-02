@@ -68,7 +68,7 @@ export function EditionsSlideshow() {
         className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/65 to-transparent"
       />
 
-      <div className="absolute inset-x-0 bottom-0 px-6 pb-5 pt-10 sm:px-8 sm:pb-6 sm:pt-14 lg:px-10 lg:pb-7 lg:pt-16">
+      <div className="absolute inset-x-0 bottom-0 px-6 pb-3 pt-10 sm:px-8 sm:pb-4 sm:pt-14 lg:px-10 lg:pb-5 lg:pt-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={slide.name}
