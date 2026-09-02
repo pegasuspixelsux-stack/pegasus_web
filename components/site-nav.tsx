@@ -64,7 +64,7 @@ export function SiteNav() {
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-50 flex flex-col bg-[#0a0a0a] px-6 py-5 md:hidden"
+            className="fixed inset-0 z-50 flex flex-col bg-[#0a0a0a]/95 px-6 py-5 backdrop-blur-2xl md:hidden"
           >
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
