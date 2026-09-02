@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DealershipEcosystem } from "@/components/dealership-ecosystem";
 import { VerticalLanding } from "@/components/vertical-landing";
 import { VERTICAL_LANDINGS } from "@/lib/verticals";
 
@@ -10,5 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <VerticalLanding data={data} />;
+  return (
+    <VerticalLanding data={data}>
+      <DealershipEcosystem />
+    </VerticalLanding>
+  );
 }
