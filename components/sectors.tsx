@@ -37,44 +37,64 @@ export function Sectors() {
           return (
           <article
             key={sector.id}
-            className="relative isolate flex min-h-[68vh] flex-col justify-end overflow-hidden border-t border-white/10 md:min-h-[75vh]"
+            className="relative flex min-h-[68vh] flex-col justify-end border-t border-white/10 bg-[#0d0d0d] md:min-h-[75vh]"
           >
-            <Image
-              src={sector.image}
-              alt=""
-              fill
-              sizes="100vw"
-              style={{ objectPosition: sector.imagePosition ?? "50% 50%" }}
-              className="object-cover opacity-80"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"
-            />
-
-            <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 pb-28 pt-16 lg:px-24">
+            <div className="mx-auto w-full max-w-[1440px] px-6 pb-28 pt-16 lg:px-24">
               <motion.div
                 initial={reduce ? false : { opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: EASE }}
               >
-                <div className="lg:max-w-[33%]">
-                  <h3 className="flex items-center gap-3 text-2xl font-light leading-[1.15] tracking-tight md:text-3xl lg:whitespace-nowrap lg:text-4xl">
-                    <Icon
-                      className="h-7 w-7 shrink-0 text-sky-400"
-                      strokeWidth={1.5}
-                    />
-                    {sector.title}
-                  </h3>
-                  <p className="mt-4 text-base leading-relaxed text-sky-400">
-                    {sector.subtitle}
-                  </p>
-
-                  {sector.body && (
-                    <p className="mt-8 border-t border-white/15 pt-8 text-base leading-relaxed text-white/70">
-                      {sector.body}
+                <div
+                  className={
+                    sector.aside
+                      ? "lg:grid lg:grid-cols-2 lg:items-start lg:gap-16"
+                      : ""
+                  }
+                >
+                  <div className={sector.aside ? "" : "lg:max-w-[33%]"}>
+                    <h3 className="flex items-center gap-3 text-2xl font-light leading-[1.15] tracking-tight md:text-3xl lg:whitespace-nowrap lg:text-4xl">
+                      <Icon
+                        className="h-7 w-7 shrink-0 text-sky-400"
+                        strokeWidth={1.5}
+                      />
+                      {sector.title}
+                    </h3>
+                    <p className="mt-4 text-base leading-relaxed text-sky-400">
+                      {sector.subtitle}
                     </p>
+
+                    {sector.body && (
+                      <p className="mt-8 border-t border-white/15 pt-8 text-base leading-relaxed text-white/70">
+                        {sector.body}
+                      </p>
+                    )}
+                  </div>
+
+                  {sector.aside && (
+                    <div className="mt-10 border-t border-white/15 pt-8 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-1">
+                      <div className="relative h-56 overflow-hidden rounded-2xl border border-white/10 lg:h-72">
+                        <Image
+                          src={sector.image}
+                          alt=""
+                          fill
+                          sizes="(min-width: 1024px) 40vw, 100vw"
+                          style={{
+                            objectPosition: sector.imagePosition ?? "50% 50%",
+                          }}
+                          className="object-cover"
+                        />
+                      </div>
+                      <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/40">
+                        {sector.aside.heading}
+                      </p>
+                      <ul className="mt-4 space-y-2 text-base text-white/70">
+                        {sector.aside.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
                 </div>
 

@@ -13,6 +13,8 @@ export type Sector = {
   imagePosition?: string;
   /** Long-form description revealed when the card is expanded. */
   body?: string;
+  /** Optional right-hand column beside the sector's text block. */
+  aside?: { heading: string; items: string[] };
   samples: { title: string; desc: string }[];
 };
 
@@ -25,6 +27,16 @@ export const SECTORS: Sector[] = [
     subtitle: "Plataformas para portales y fichas de propiedades de alta gama.",
     image: "/sectores/inmobiliarias.jpg",
     body: "Plataformas para captar inversores de Punta del Este, Buenos Aires y São Paulo. Galerías inmersivas, selector multidivisa (USD, UYU, ARS) y búsqueda instantánea por zona exclusiva. Fichas técnicas, planos y contacto directo con brokers por WhatsApp.",
+    aside: {
+      heading: "Zonas de foco",
+      items: [
+        "La Barra",
+        "Manantiales",
+        "José Ignacio",
+        "Punta Ballena",
+        "Beverly Hills",
+      ],
+    },
     samples: [
       {
         title: "Ficha inmersiva de propiedad",
