@@ -7,7 +7,7 @@
    -----------
    Dark   bg #0A0A0A · surface #0F0F0F · card #161616
           text #F3F3F3 · secondary #A0A0A0 · accent sky-400 (#38BDF8)
-   Light  bg #FFFFFF · surface (soft white) #F8F8F8 · card #FFFFFF
+   Light  bg #FFFFFF · surface (lightest blue) #EFF5FF · card #FFFFFF
           text #0A0A0A · secondary #57575C · accent blue-700 (#1D4ED8)
    Sections alternate A / B for a subtle step between bands.
    Type   locked to a 16px base grid — h1 64/1.1 · h2 48/1.2 · h3 24/1.5 · body 16/1.6
@@ -32,8 +32,8 @@
 
 :root[data-theme="light"] {
   --background: #ffffff;
-  --surface: #f8f8f8; /* soft white — the alternate band */
-  --surface-raised: #f4f4f4;
+  --surface: #fafcff; /* lightest blue — the alternate band */
+  --surface-raised: #f4f8ff;
   --surface-card: #ffffff;
   --foreground: #0a0a0a;
   --muted: #57575c;
