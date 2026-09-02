@@ -15,9 +15,11 @@ import { WHATSAPP_NUMBER, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-const EMAIL = "contacto@pegasuspixels.com";
-const PHONE_DISPLAY = "+598 99 000 000";
-const PHONE_HREF = "+59899000000";
+const EMAIL = "apps@pegasuspixels.com";
+const PHONES = [
+  { display: "+1 301 257 4500", href: "+13012574500", region: "EE. UU." },
+  { display: "+598 91 028 324", href: "+59891028324", region: "Uruguay" },
+];
 
 const inputClass =
   "w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2.5 text-white placeholder:text-white/30 focus:border-white/40 focus:outline-none";
@@ -84,15 +86,18 @@ export function ContactSection() {
                 {EMAIL}
               </a>
             </li>
-            <li className="flex items-start gap-3">
-              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
-              <a
-                href={`tel:${PHONE_HREF}`}
-                className="text-muted transition-colors hover:text-white"
-              >
-                {PHONE_DISPLAY}
-              </a>
-            </li>
+            {PHONES.map((phone) => (
+              <li key={phone.href} className="flex items-start gap-3">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
+                <a
+                  href={`tel:${phone.href}`}
+                  className="text-muted transition-colors hover:text-white"
+                >
+                  {phone.display}
+                  <span className="text-muted/60"> · {phone.region}</span>
+                </a>
+              </li>
+            ))}
             <li className="flex items-start gap-3">
               <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
               <a

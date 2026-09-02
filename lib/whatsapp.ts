@@ -1,5 +1,5 @@
-// TODO: replace with the real Pegasus Pixels WhatsApp number (country code + number, digits only).
-export const WHATSAPP_NUMBER = "59899000000";
+/** Pegasus Pixels WhatsApp / phone line (US, +1 301 257 4500), digits only. */
+export const WHATSAPP_NUMBER = "13012574500";
 
 type LeadContext = {
   vertical?: string;
@@ -13,7 +13,7 @@ type LeadContext = {
 export function buildWhatsAppUrl({ vertical, phone }: LeadContext = {}): string {
   const target = vertical && vertical !== "general" ? vertical : "mi proyecto";
   const lines = [
-    `Hola, me interesa la infraestructura digital para ${target} en Punta del Este.`,
+    `Hola, me interesa la infraestructura digital para ${target}.`,
   ];
   if (phone && phone.trim()) {
     lines.push(`Mi contacto: ${phone.trim()}`);
